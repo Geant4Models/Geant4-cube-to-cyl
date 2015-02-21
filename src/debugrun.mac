@@ -1,0 +1,8 @@
+# Quick macro file for visualization/debug
+#
+# Run proton beam ...
+/gun/particle proton
+#
+/gun/energy 50 MeV
+/run/beamOn 10
+/tracking/verbose 0
