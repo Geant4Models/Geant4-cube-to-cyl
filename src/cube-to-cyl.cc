@@ -100,34 +100,58 @@ int main(int argc,char** argv) {
     G4String cutCommand = "/run/setCut 0.01 mm";
     UImanager->ApplyCommand(cutCommand);
     
-    // Constant vars
+    // Experimental Parameters
 	G4int Al_side[3] = {5, 10, 25};
+	
+	// Create data analysis directory tree
+	G4cout << "Creating data analysis tree..." << G4endl;
+	std::ostringstream dirCommandStream;
 	G4String data_dir = "data/";
-	for ( G4int side_i=0; side_i<3; side_i++ ) {
+	G4String data_dir_geo = "Al";
+	G4String data_dir_energy = "E";
+	G4String data_dir_analysis = "Analysis";
+	// Make base dir
+	dirCommandStream << "mkdir -p " << data_dir;
+	G4String dirCommand = dirCommandStream.str();
+    system(dirCommand);
+    for (G4int al_num=0; al_num<3; al_num++) {
+	  // Geometry dir iteration
+	  dirCommandStream.str(""); dirCommand = "";
+      dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/";
+	  dirCommand = dirCommandStream.str();
+      system(dirCommand);
+      
+      for (G4int E_num=0; E_num<45; E_num++) {
+        // Energy dir iteration
+        dirCommandStream.str(""); dirCommand = "";
+        dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_energy << E_num << "/";
+	    dirCommand = dirCommandStream.str();
+        system(dirCommand);
+        
+        for (G4int analysis_num=0; analysis_num<4; analysis_num++) {
+          // Analysis dir iteration
+          dirCommandStream.str(""); dirCommand = "";
+          dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_energy << E_num << "/" << data_dir_analysis << analysis_num << "/";
+	      dirCommand = dirCommandStream.str();
+          system(dirCommand);
+        }
+      }
+	}
+    
+    for ( G4int side_i=0; side_i<3; side_i++ ) {
 	  // Assign thickness
 	  detConstruction->AlSideIteration(side_i);
 	  runManager->GeometryHasBeenModified();
-	  
-	  // Create data directory and leave thickness flag for SteppingAction
-	  std::ostringstream raw_dirCommand;
-	  raw_dirCommand << "mkdir -p " << data_dir << "; echo " << side_i << " > " << data_dir << ".sideLength";
-	  G4String dirCommand = raw_dirCommand.str();
+	
+	  // Create state flag
+	  dirCommandStream.str(""); dirCommand = "";
+      dirCommandStream << "echo " << side_i << " > " << data_dir << ".sideLength";
+      dirCommand = dirCommandStream.str();
       system(dirCommand);
 	  
 	  // Run experimental beam energies
 	  G4String command = "/control/execute ";
       UImanager->ApplyCommand(command+macro);
-
-      // Remove run logs (to be placed in RunAction when confirmed single
-      // worker thread to be in control of file I/O)
-      G4String runRm = "rm " + data_dir + "run*";
-      system(runRm);
-      
-      // Save completed dataset as side-length iteration
-	  std::ostringstream raw_sideLength_file; raw_sideLength_file << "L" << Al_side[side_i] << "_gain.txt";
-	  G4String sideLength_file = raw_sideLength_file.str();
-	  G4String sideLengthcmd = "mv " + data_dir + "gain.txt " + data_dir + sideLength_file;
-	  system(sideLengthcmd);
     }
     
     // Remove sideLength flag
