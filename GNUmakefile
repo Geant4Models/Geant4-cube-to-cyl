@@ -1,4 +1,4 @@
-SUBDIR = BIN
+SUBDIR = src
 
 .PHONY: bin clean clean_bin debug
 

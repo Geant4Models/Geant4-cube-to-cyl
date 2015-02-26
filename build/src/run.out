@@ -652,9 +652,6 @@ G4WT1 >      Cr_sctns:        G4NeutronCaptureXS: 0 eV  ---> 100 TeV
      Cr_sctns:          GheishaCaptureXS: 0 eV  ---> 100 TeV
 
   Process: nKiller
-G4WT0 > 
-====================================================================
-                  HADRONIC PROCESSES SUMMARY (verbose level 1)
 G4WT1 > 
 ---------------------------------------------------
                            Hadronic Processes for GenericIon
@@ -662,12 +659,6 @@ G4WT1 >
   Process: ionInelastic
         Model:  Binary Light Ion Cascade: 0 eV  ---> 4 GeV
         Model:                      FTFP: 2 GeV ---> 100 TeV
-G4WT0 > 
----------------------------------------------------
-                           Hadronic Processes for neutron
-
-  Process: hadElastic
-        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
 G4WT1 >      Cr_sctns: Glauber-Gribov nucleus nucleus: 0 eV  ---> 2.88022e+295 J  
      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
@@ -676,26 +667,10 @@ G4WT1 >      Cr_sctns: Glauber-Gribov nucleus nucleus: 0 eV  ---> 2.88022e+295 J
 
   Process: hadElastic
         Model:              hElasticLHEP: 0 eV  ---> 100 TeV
-G4WT0 >      Cr_sctns:     ChipsNeutronElasticXS: 0 eV  ---> 100 TeV
-     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
-
-  Process: neutronInelastic
-        Model:                      FTFP: 4 GeV ---> 100 TeV
-        Model:            BertiniCascade: 0 eV  ---> 5 GeV
 G4WT1 >      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
 
   Process: anti_neutronInelastic
         Model:                      FTFP: 0 eV  ---> 100 TeV
-G4WT0 >      Cr_sctns:      G4NeutronInelasticXS: 0 eV  ---> 100 TeV
-     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
-     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
-
-  Process: nCapture
-        Model:               nRadCapture: 0 eV  ---> 100 TeV
-G4WT0 >      Cr_sctns:        G4NeutronCaptureXS: 0 eV  ---> 100 TeV
-     Cr_sctns:          GheishaCaptureXS: 0 eV  ---> 100 TeV
-
-  Process: nKiller
 G4WT1 >      Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
@@ -705,13 +680,6 @@ G4WT1 >      Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J
   Process: hadElastic
         Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
         Model:              AntiAElastic: 100 MeV ---> 100 TeV
-G4WT0 > 
----------------------------------------------------
-                           Hadronic Processes for GenericIon
-
-  Process: ionInelastic
-        Model:  Binary Light Ion Cascade: 0 eV  ---> 4 GeV
-        Model:                      FTFP: 2 GeV ---> 100 TeV
 G4WT1 >      Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
 
@@ -721,24 +689,12 @@ G4WT1 >      Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J
      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
   Process: hFritiofCaptureAtRest
-G4WT0 >      Cr_sctns: Glauber-Gribov nucleus nucleus: 0 eV  ---> 2.88022e+295 J  
-     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
-
----------------------------------------------------
-                           Hadronic Processes for anti_neutron
-
-  Process: hadElastic
-        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
 G4WT1 > 
 ---------------------------------------------------
                            Hadronic Processes for e+
 
   Process: positronNuclear
         Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
-G4WT0 >      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
-
-  Process: anti_neutronInelastic
-        Model:                      FTFP: 0 eV  ---> 100 TeV
 G4WT1 >      Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
@@ -756,15 +712,6 @@ G4WT1 >      Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
   Process: photonNuclear
         Model:            BertiniCascade: 0 eV  ---> 3.5 GeV
         Model:           TheoFSGenerator: 3 GeV ---> 100 TeV
-G4WT0 >      Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
-     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
-
----------------------------------------------------
-                           Hadronic Processes for anti_proton
-
-  Process: hadElastic
-        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
-        Model:              AntiAElastic: 100 MeV ---> 100 TeV
 G4WT1 >      Cr_sctns:            PhotoNuclearXS: 0 eV  ---> 100 TeV
      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
@@ -773,26 +720,11 @@ G4WT1 >      Cr_sctns:            PhotoNuclearXS: 0 eV  ---> 100 TeV
 
   Process: hadElastic
         Model:              hElasticLHEP: 0 eV  ---> 100 TeV
-G4WT0 >      Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
-     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
-
-  Process: anti_protonInelastic
-        Model:                      FTFP: 0 eV  ---> 100 TeV
-G4WT0 >      Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
-     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
-
-  Process: hFritiofCaptureAtRest
 G4WT1 >      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
 
   Process: kaon+Inelastic
         Model:                      FTFP: 4 GeV ---> 100 TeV
         Model:            BertiniCascade: 0 eV  ---> 5 GeV
-G4WT0 > 
----------------------------------------------------
-                           Hadronic Processes for e+
-
-  Process: positronNuclear
-        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
 G4WT1 >      Cr_sctns:  ChipsKaonPlusInelasticXS: 0 eV  ---> 100 TeV
      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
@@ -801,43 +733,27 @@ G4WT1 >      Cr_sctns:  ChipsKaonPlusInelasticXS: 0 eV  ---> 100 TeV
 
   Process: hadElastic
         Model:              hElasticLHEP: 0 eV  ---> 100 TeV
-G4WT0 >      Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
-     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
-
----------------------------------------------------
-                           Hadronic Processes for e-
-
-  Process: electronNuclear
-        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
 G4WT1 >      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
 
   Process: kaon-Inelastic
         Model:                      FTFP: 4 GeV ---> 100 TeV
         Model:            BertiniCascade: 0 eV  ---> 5 GeV
+G4WT0 > 
+====================================================================
+                  HADRONIC PROCESSES SUMMARY (verbose level 1)
 G4WT1 >      Cr_sctns: ChipsKaonMinusInelasticXS: 0 eV  ---> 100 TeV
      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
   Process: hBertiniCaptureAtRest
-G4WT0 >      Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
-     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
-
+G4WT0 > 
 ---------------------------------------------------
-                           Hadronic Processes for gamma
+                           Hadronic Processes for neutron
 
-  Process: photonNuclear
-        Model:            BertiniCascade: 0 eV  ---> 3.5 GeV
-        Model:           TheoFSGenerator: 3 GeV ---> 100 TeV
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
 G4WT1 > 
 ---------------------------------------------------
                            Hadronic Processes for lambda
-
-  Process: hadElastic
-        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
-G4WT0 >      Cr_sctns:            PhotoNuclearXS: 0 eV  ---> 100 TeV
-     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
-
----------------------------------------------------
-                           Hadronic Processes for kaon+
 
   Process: hadElastic
         Model:              hElasticLHEP: 0 eV  ---> 100 TeV
@@ -846,9 +762,10 @@ G4WT1 >      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
   Process: lambdaInelastic
         Model:            BertiniCascade: 0 eV  ---> 6 GeV
         Model:                      FTFP: 2 GeV ---> 100 TeV
-G4WT0 >      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+G4WT0 >      Cr_sctns:     ChipsNeutronElasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
 
-  Process: kaon+Inelastic
+  Process: neutronInelastic
         Model:                      FTFP: 4 GeV ---> 100 TeV
         Model:            BertiniCascade: 0 eV  ---> 5 GeV
 G4WT1 >      Cr_sctns:   ChipsHyperonInelasticXS: 0 eV  ---> 100 TeV
@@ -858,6 +775,12 @@ G4WT1 >      Cr_sctns:   ChipsHyperonInelasticXS: 0 eV  ---> 100 TeV
                            Hadronic Processes for mu-
 
   Process: muMinusCaptureAtRest
+G4WT0 >      Cr_sctns:      G4NeutronInelasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: nCapture
+        Model:               nRadCapture: 0 eV  ---> 100 TeV
 G4WT1 > 
 ---------------------------------------------------
                            Hadronic Processes for pi+
@@ -865,6 +788,128 @@ G4WT1 >
   Process: hadElastic
         Model:              hElasticLHEP: 0 eV  ---> 1.0001 GeV
         Model:           hElasticGlauber: 1 GeV ---> 100 TeV
+G4WT0 >      Cr_sctns:        G4NeutronCaptureXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaCaptureXS: 0 eV  ---> 100 TeV
+
+  Process: nKiller
+G4WT1 >      Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: pi+Inelastic
+        Model:                      FTFP: 4 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+G4WT0 > 
+---------------------------------------------------
+                           Hadronic Processes for GenericIon
+
+  Process: ionInelastic
+        Model:  Binary Light Ion Cascade: 0 eV  ---> 4 GeV
+        Model:                      FTFP: 2 GeV ---> 100 TeV
+G4WT1 >      Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+G4WT1 >                            below 91 GeV, Glauber-Gribov above 
+G4WT1 >      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for pi-
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 1.0001 GeV
+        Model:           hElasticGlauber: 1 GeV ---> 100 TeV
+G4WT0 >      Cr_sctns: Glauber-Gribov nucleus nucleus: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for anti_neutron
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+G4WT0 >      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: anti_neutronInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+G4WT1 >      Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: pi-Inelastic
+        Model:                      FTFP: 4 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+G4WT1 >      Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
+                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
+G4WT1 >                            below 91 GeV, Glauber-Gribov above 
+G4WT0 >      Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for anti_proton
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+G4WT1 >      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hBertiniCaptureAtRest
+G4WT1 > 
+---------------------------------------------------
+                           Hadronic Processes for proton
+
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+G4WT0 >      Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: anti_protonInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+G4WT1 >      Cr_sctns:      ChipsProtonElasticXS: 0 eV  ---> 100 TeV
+     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: protonInelastic
+        Model:                      FTFP: 4 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
+G4WT0 >      Cr_sctns:              AntiAGlauber: 0 eV  ---> 2.88022e+295 J  
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+  Process: hFritiofCaptureAtRest
+G4WT1 >      Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+================================================================
+G4WT0 > 
+---------------------------------------------------
+                           Hadronic Processes for e+
+
+  Process: positronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+G4WT0 >      Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for e-
+
+  Process: electronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+G4WT0 >      Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for gamma
+
+  Process: photonNuclear
+        Model:            BertiniCascade: 0 eV  ---> 3.5 GeV
+        Model:           TheoFSGenerator: 3 GeV ---> 100 TeV
+G4WT0 >      Cr_sctns:            PhotoNuclearXS: 0 eV  ---> 100 TeV
+     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
+
+---------------------------------------------------
+                           Hadronic Processes for kaon+
+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+G4WT0 >      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
+
+  Process: kaon+Inelastic
+        Model:                      FTFP: 4 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 5 GeV
 G4WT0 >      Cr_sctns:  ChipsKaonPlusInelasticXS: 0 eV  ---> 100 TeV
      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
@@ -878,44 +923,21 @@ G4WT0 >      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
   Process: kaon-Inelastic
         Model:                      FTFP: 4 GeV ---> 100 TeV
         Model:            BertiniCascade: 0 eV  ---> 5 GeV
-G4WT1 >      Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
-     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
-
-  Process: pi+Inelastic
-        Model:                      FTFP: 4 GeV ---> 100 TeV
-        Model:            BertiniCascade: 0 eV  ---> 5 GeV
-G4WT1 >      Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
-                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
 G4WT0 >      Cr_sctns: ChipsKaonMinusInelasticXS: 0 eV  ---> 100 TeV
      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
   Process: hBertiniCaptureAtRest
-G4WT1 >                            below 91 GeV, Glauber-Gribov above 
 G4WT0 > 
 ---------------------------------------------------
                            Hadronic Processes for lambda
 
   Process: hadElastic
         Model:              hElasticLHEP: 0 eV  ---> 100 TeV
-G4WT1 >      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
-
----------------------------------------------------
-                           Hadronic Processes for pi-
-
-  Process: hadElastic
-        Model:              hElasticLHEP: 0 eV  ---> 1.0001 GeV
-        Model:           hElasticGlauber: 1 GeV ---> 100 TeV
 G4WT0 >      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
 
   Process: lambdaInelastic
         Model:            BertiniCascade: 0 eV  ---> 6 GeV
         Model:                      FTFP: 2 GeV ---> 100 TeV
-G4WT1 >      Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
-     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
-
-  Process: pi-Inelastic
-        Model:                      FTFP: 4 GeV ---> 100 TeV
-        Model:            BertiniCascade: 0 eV  ---> 5 GeV
 G4WT0 >      Cr_sctns:   ChipsHyperonInelasticXS: 0 eV  ---> 100 TeV
      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
@@ -923,9 +945,6 @@ G4WT0 >      Cr_sctns:   ChipsHyperonInelasticXS: 0 eV  ---> 100 TeV
                            Hadronic Processes for mu-
 
   Process: muMinusCaptureAtRest
-G4WT1 >      Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
-                         G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
-G4WT1 >                            below 91 GeV, Glauber-Gribov above 
 G4WT0 > 
 ---------------------------------------------------
                            Hadronic Processes for pi+
@@ -933,15 +952,6 @@ G4WT0 >
   Process: hadElastic
         Model:              hElasticLHEP: 0 eV  ---> 1.0001 GeV
         Model:           hElasticGlauber: 1 GeV ---> 100 TeV
-G4WT1 >      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
-
-  Process: hBertiniCaptureAtRest
-G4WT1 > 
----------------------------------------------------
-                           Hadronic Processes for proton
-
-  Process: hadElastic
-        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
 G4WT0 >      Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
      Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
 
@@ -951,16 +961,6 @@ G4WT0 >      Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
 G4WT0 >      Cr_sctns:      G4CrossSectionPairGG: 0 eV  ---> 100 TeV
                          G4CrossSectionPairGG: G4PiNuclearCrossSection cross sections 
 G4WT0 >                            below 91 GeV, Glauber-Gribov above 
-G4WT1 >      Cr_sctns:      ChipsProtonElasticXS: 0 eV  ---> 100 TeV
-     Cr_sctns:            GheishaElastic: 0 eV  ---> 100 TeV
-
-  Process: protonInelastic
-        Model:                      FTFP: 4 GeV ---> 100 TeV
-        Model:            BertiniCascade: 0 eV  ---> 5 GeV
-G4WT1 >      Cr_sctns:       Barashenkov-Glauber: 0 eV  ---> 100 TeV
-     Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
-
-================================================================
 G4WT0 >      Cr_sctns:          GheishaInelastic: 0 eV  ---> 100 TeV
 
 ---------------------------------------------------
@@ -1384,5 +1384,767 @@ hPairProd:   for  pi-    SubType= 4
       Sampling table 16x1001; from 1.11656 GeV to 10 TeV 
       ===== EM models for the G4Region  DefaultRegionForTheWorld ======
            hPairProd :  Emin=        0 eV    Emax=       10 TeV
-Graphics systems deleted.
-Visualization Manager deleting...
+G4WT0 > FileName is data/Al5/E1/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E1/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E1/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E1/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E1/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E1/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E1/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E1/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E1/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E1/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E1/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E1/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E1/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E1/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E1/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E1/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E1/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E1/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E1/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E1/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E2/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E2/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E2/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E2/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E2/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E2/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E2/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E2/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E2/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E2/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E2/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E2/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E2/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E2/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E2/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E2/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E2/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E2/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E2/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E2/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E3/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E3/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E3/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E3/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E3/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E3/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E3/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E3/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E3/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E3/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E3/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E3/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E3/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E3/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E3/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E3/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E3/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E3/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E3/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E3/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E4/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E4/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E4/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E4/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E4/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E4/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E4/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E4/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E4/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E4/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E4/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E4/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E4/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E4/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E4/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E4/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E4/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E4/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E4/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E4/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E5/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E5/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E5/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E5/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E5/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E5/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E5/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E5/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E5/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E5/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E5/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E5/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E5/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E5/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E5/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E5/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E5/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E5/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E5/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E5/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E6/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E6/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E6/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E6/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E6/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E6/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E6/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E6/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E6/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E6/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E6/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E6/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E6/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E6/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E6/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E6/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E6/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E6/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E6/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E6/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E7/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E7/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E7/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E7/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E7/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E7/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E7/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E7/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E7/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E7/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E7/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E7/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E7/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E7/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E7/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E7/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E7/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E7/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E7/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E7/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E8/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E8/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E8/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E8/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E8/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E8/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E8/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E8/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E8/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E8/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E8/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E8/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E8/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E8/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E8/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E8/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E8/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E8/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E8/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E8/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E9/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E9/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E9/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E9/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E9/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E9/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E9/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E9/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E9/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E9/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E9/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E9/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E9/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E9/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E9/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E9/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E9/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E9/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E9/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E9/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E10/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E10/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E10/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E10/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E10/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E10/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E10/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E10/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E10/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E10/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E10/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E10/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E10/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E10/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E10/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E10/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E10/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E10/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E10/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E10/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E11/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E11/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E11/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E11/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E11/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E11/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E11/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E11/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E11/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E11/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E11/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E11/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E11/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E11/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E11/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E11/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E11/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E11/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E11/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E11/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E12/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E12/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E12/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E12/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E12/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E12/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E12/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E12/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E12/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E12/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E12/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E12/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E12/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E12/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E12/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E12/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E12/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E12/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E12/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E12/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E13/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E13/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E13/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E13/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E13/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E13/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E13/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E13/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E13/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E13/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E13/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E13/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E13/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E13/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E13/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E13/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E13/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E13/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E13/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E13/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E14/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E14/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E14/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E14/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E14/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E14/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E14/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E14/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E14/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E14/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E14/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E14/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E14/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E14/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E14/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E14/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E14/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E14/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E14/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E14/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E15/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E15/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E15/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E15/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E15/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E15/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E15/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E15/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E15/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E15/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E15/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E15/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E15/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E15/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E15/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E15/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E15/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E15/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E15/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E15/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E16/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E16/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E16/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E16/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E16/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E16/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E16/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E16/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E16/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E16/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E16/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E16/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E16/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E16/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E16/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E16/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E16/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E16/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E16/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E16/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E17/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E17/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E17/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E17/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E17/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E17/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E17/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E17/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E17/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E17/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E17/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E17/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E17/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E17/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E17/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E17/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E17/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E17/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E17/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E17/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E18/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E18/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E18/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E18/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E18/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E18/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E18/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E18/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E18/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E18/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E18/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E18/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E18/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E18/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E18/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E18/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E18/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E18/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E18/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E18/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E19/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E19/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E19/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E19/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E19/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E19/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E19/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E19/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E19/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E19/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E19/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E19/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E19/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E19/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E19/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E19/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E19/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E19/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E19/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E19/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E20/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E20/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E20/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E20/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E20/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E20/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E20/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E20/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E20/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E20/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E20/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E20/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E20/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E20/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E20/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E20/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E20/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E20/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E20/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E20/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E21/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E21/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E21/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E21/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E21/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E21/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E21/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E21/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E21/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E21/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E21/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E21/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E21/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E21/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E21/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E21/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E21/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E21/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E21/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E21/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E22/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E22/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E22/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E22/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E22/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E22/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E22/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E22/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E22/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E22/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E22/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E22/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E22/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E22/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E22/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E22/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E22/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E22/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E22/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E22/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E23/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E23/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E23/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E23/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E23/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E23/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E23/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E23/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E23/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E23/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E23/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E23/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E23/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E23/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E23/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E23/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E23/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E23/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E23/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E23/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E24/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E24/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E24/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E24/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E24/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E24/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E24/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E24/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E24/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E24/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E24/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E24/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E24/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E24/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E24/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E24/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E24/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E24/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E24/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E24/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E25/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E25/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E25/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E25/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E25/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E25/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E25/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E25/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E25/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E25/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E25/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E25/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E25/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E25/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E25/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E25/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E25/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E25/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E25/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E25/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E26/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E26/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E26/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E26/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E26/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E26/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E26/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E26/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E26/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E26/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E26/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E26/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E26/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E26/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E26/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E26/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E26/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E26/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E26/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E26/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E27/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E27/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E27/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E27/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E27/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E27/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E27/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E27/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E27/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E27/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E27/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E27/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E27/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E27/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E27/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E27/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E27/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E27/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E27/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E27/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E28/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E28/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E28/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E28/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E28/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E28/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E28/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E28/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E28/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E28/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E28/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E28/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E28/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E28/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E28/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E28/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E28/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E28/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E28/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E28/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E29/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E29/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E29/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E29/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E29/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E29/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E29/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E29/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E29/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E29/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E29/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E29/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E29/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E29/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E29/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E29/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E29/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E29/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E29/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E29/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E30/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E30/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E30/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E30/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E30/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E30/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E30/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E30/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E30/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E30/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E30/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E30/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E30/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E30/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E30/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E30/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E30/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E30/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E30/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E30/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E31/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E31/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E31/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E31/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E31/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E31/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E31/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E31/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E31/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E31/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E31/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E31/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E31/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E31/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E31/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E31/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E31/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E31/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E31/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E31/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E32/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E32/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E32/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E32/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E32/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E32/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E32/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E32/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E32/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E32/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E32/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E32/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E32/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E32/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E32/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E32/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E32/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E32/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E32/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E32/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E33/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E33/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E33/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E33/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E33/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E33/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E33/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E33/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E33/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E33/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E33/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E33/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E33/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E33/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E33/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E33/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E33/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E33/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E33/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E33/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E34/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E34/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E34/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E34/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E34/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E34/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E34/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E34/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E34/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E34/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E34/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E34/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E34/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E34/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E34/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E34/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E34/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E34/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E34/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E34/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E35/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E35/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E35/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E35/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E35/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E35/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E35/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E35/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E35/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E35/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E35/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E35/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E35/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E35/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E35/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E35/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E35/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E35/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E35/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E35/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E36/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E36/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E36/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E36/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E36/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E36/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E36/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E36/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E36/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E36/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E36/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E36/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E36/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E36/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E36/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E36/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E36/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E36/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E36/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E36/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E37/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E37/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E37/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E37/Analysis3/event3.txt
+G4WT1 > FileName is data/Al5/E37/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E37/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E37/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E37/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E37/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E37/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E37/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E37/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E37/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E37/Analysis3/event3.txt
+G4WT0 > FileName is data/Al5/E37/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E37/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E37/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E37/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E37/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E37/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E38/Analysis3/event0.txt
+G4WT0 > FileName is data/Al5/E38/Analysis3/event1.txt
+G4WT0 > FileName is data/Al5/E38/Analysis3/event2.txt
+G4WT0 > FileName is data/Al5/E38/Analysis3/event3.txt
+G4WT0 > Particle is 
+G4WT0 > FileName is data/Al5/E38/Analysis3/event4.txt
+G4WT0 > FileName is data/Al5/E38/Analysis3/event5.txt
+G4WT0 > FileName is data/Al5/E38/Analysis3/event6.txt
+G4WT0 > FileName is data/Al5/E38/Analysis3/event7.txt
+G4WT0 > FileName is data/Al5/E38/Analysis3/event8.txt
+G4WT0 > FileName is data/Al5/E38/Analysis3/event9.txt
+G4WT1 > FileName is data/Al5/E38/Analysis3/event0.txt
+G4WT1 > FileName is data/Al5/E38/Analysis3/event1.txt
+G4WT1 > FileName is data/Al5/E38/Analysis3/event2.txt
+G4WT1 > FileName is data/Al5/E38/Analysis3/event3.txt
+G4WT1 > Particle is 
+G4WT1 > FileName is data/Al5/E38/Analysis3/event4.txt
+G4WT1 > FileName is data/Al5/E38/Analysis3/event5.txt
+G4WT1 > FileName is data/Al5/E38/Analysis3/event6.txt
+G4WT1 > FileName is data/Al5/E38/Analysis3/event7.txt
+G4WT1 > FileName is data/Al5/E38/Analysis3/event8.txt
+G4WT1 > FileName is data/Al5/E38/Analysis3/event9.txt
+G4WT0 > FileName is data/Al5/E39/Analysis3/event0.txt
+G4WT

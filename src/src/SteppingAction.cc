@@ -61,10 +61,10 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
   stateFile >> fileVarGet;
   Al_side = atoi(fileVarGet);
     
-  // Primary event number and energy number
+  // Primary event number and energy (run) number
   G4int eventNum = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-  G4double E_Num = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
-  // Adjust event number by state var
+  G4int E_Num = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
+  // Adjust Energy number by state var
   G4int Al_num = 0;   if ( Al_side == 10 ) Al_num = 1; if ( Al_side == 25 ) Al_num = 2;
   E_Num = E_Num - Al_num*45 + 1;
   
@@ -83,7 +83,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
   G4double z = xyz[2] + worldZHalfLength;
   G4int zBin_final = floor(z);
   
-  // 1_Energy_Deposition
+  // 1 Energy Deposition
   G4double particleEDep = step->GetTotalEnergyDeposit();
   // + final bin
   fileNameStream.str(""); fileName = "";
@@ -100,7 +100,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
     G4double particleCharge = step->GetTrack()->GetDefinition()->GetPDGCharge();
 	
-	// 2_Charge_Transfer
+	// 2 Charge Transfer
     if ( particleCharge != 0 ) {
 	  // - init bin
 	  fileNameStream.str(""); fileName = "";
@@ -120,24 +120,9 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     }
     
     // 3a Electron backscatter via Gamma ray counting (method to come)
-    if ( particleParentID != 0 && particleName == "gamma" ) {
-      G4String volumeName = step->GetTrack()->GetVolume()->GetName();
-      G4String volumeNameVertex = step->GetTrack()->GetLogicalVolumeAtVertex()->GetName();
-      
-      // Check if exiting solid
-      //if ( volumeName == "World" && volumeNameVertex != "World" ) {
-        // Add to tally
-	    fileNameStream.str(""); fileName = "";
-        fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
-        fileName = fileNameStream.str();
-        fileStream.open (fileName, std::ios::app);
-        fileStream << particleName << "\n";
-        fileStream.close();
-	  //}
-	}
-    
-    // 3b,c Particle tallies
-    if ( particleParentID != 0 && particleName != "gamma" && particleName != "e-" ) {
+    // 3b,c proton and neutron production;
+    // Currently broken
+    if ( particleParentID != 0 && ( particleName == "gamma" || particleName == "proton" || particleName == "neutron" )  ) {
       // Add to tally
 	  fileNameStream.str(""); fileName = "";
       fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
