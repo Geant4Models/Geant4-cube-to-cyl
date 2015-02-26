@@ -65,7 +65,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes() {
   G4double Al_cube_Y = 5*cm;
   G4double Al_cube_Z = 5*cm;
   // 50 cm from source (-7.5 cm from world center)
-  G4ThreeVector Al_pos = G4ThreeVector(0,0,-7.5*cm);
+  G4ThreeVector Al_pos = G4ThreeVector(0*cm, 0*cm,-7.5*cm);
   G4RotationMatrix Al_cyl_rot = G4RotationMatrix(G4ThreeVector(), G4ThreeVector(), G4ThreeVector());
   G4Transform3D Al_transform = G4Transform3D(Al_cyl_rot, Al_pos);
   
@@ -81,7 +81,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes() {
                                                  G4ThreeVector(0, std::cos(phi), -std::sin(phi)),
                                                  G4ThreeVector(0, std::sin(phi), std::cos(phi)));
   // 100 cm from source (+42.5 cm from world center)
-  G4ThreeVector He_pos = G4ThreeVector(0,0,42.5*cm);
+  G4ThreeVector He_pos = G4ThreeVector(0*cm, 0*cm, 42.5*cm);
   G4Transform3D He_transform = G4Transform3D(He_cyl_rot, He_pos);
   
   // Get materials

@@ -121,14 +121,14 @@ int main(int argc,char** argv) {
 	  dirCommand = dirCommandStream.str();
       system(dirCommand);
       
-      for (G4int E_num=0; E_num<45; E_num++) {
+      for (G4int E_num=1; E_num<=45; E_num++) {
         // Energy dir iteration
         dirCommandStream.str(""); dirCommand = "";
         dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_energy << E_num << "/";
 	    dirCommand = dirCommandStream.str();
         system(dirCommand);
         
-        for (G4int analysis_num=0; analysis_num<4; analysis_num++) {
+        for (G4int analysis_num=1; analysis_num<5; analysis_num++) {
           // Analysis dir iteration
           dirCommandStream.str(""); dirCommand = "";
           dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_energy << E_num << "/" << data_dir_analysis << analysis_num << "/";
@@ -145,7 +145,7 @@ int main(int argc,char** argv) {
 	
 	  // Create state flag
 	  dirCommandStream.str(""); dirCommand = "";
-      dirCommandStream << "echo " << side_i << " > " << data_dir << ".sideLength";
+      dirCommandStream << "echo " << Al_side[side_i] << " > " << data_dir << ".state";
       dirCommand = dirCommandStream.str();
       system(dirCommand);
 	  
@@ -154,8 +154,8 @@ int main(int argc,char** argv) {
       UImanager->ApplyCommand(command+macro);
     }
     
-    // Remove sideLength flag
-    G4String runRm = "rm " + data_dir + ".sideLength";
+    // Remove state flag
+    G4String runRm = "rm " + data_dir + ".state";
     system(runRm);
   }
   else {
