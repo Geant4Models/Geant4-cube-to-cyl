@@ -128,7 +128,7 @@ int main(int argc,char** argv) {
 	    dirCommand = dirCommandStream.str();
         system(dirCommand);
         
-        for (G4int analysis_num=1; analysis_num<5; analysis_num++) {
+        for (G4int analysis_num=1; analysis_num<=3; analysis_num++) {
           // Analysis dir iteration
           dirCommandStream.str(""); dirCommand = "";
           dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_energy << E_num << "/" << data_dir_analysis << analysis_num << "/";

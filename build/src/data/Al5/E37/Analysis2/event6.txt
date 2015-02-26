@@ -1,0 +1,6 @@
+0 init -1
+477 final 1
+475 init 1
+475 final -1
+475 init 1
+475 final -1

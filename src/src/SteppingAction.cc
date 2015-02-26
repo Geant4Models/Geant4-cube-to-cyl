@@ -34,84 +34,117 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
   //
   // Source propagates along z-axis
   //
-  // 1. Total charge transfer between birth and death bins
-  // 2. Total energy deposited per bin
-  // 3a. e- created per primary
+  // 1. Total energy deposited per bin
+  // 2. Total charge transfer between bins
+  // 3a. e- backscatter per primary
   // 3b. p+ created per primary
   // 3c. n created per primary
   
+  // I/O vars
+  std::ostringstream fileNameStream;
+  std::ofstream fileStream;
+  G4String fileName;
+  
+  // Directory info
+  G4String fileVarGet;
+  G4String data_dir = "data/";
+  G4String data_dir_geo = "Al";
+  G4String data_dir_energy = "E";
+  G4String data_dir_analysis = "Analysis";
+  
+  // Acqiure state vars
+  G4int Al_side;
+  fileNameStream << data_dir << ".state";
+  fileName = fileNameStream.str();
+  std::ifstream stateFile;
+  stateFile.open(fileName);
+  stateFile >> fileVarGet;
+  Al_side = atoi(fileVarGet);
+    
+  // Primary event number and energy number
+  G4int eventNum = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
+  G4double E_Num = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
+  // Adjust event number by state var
+  G4int Al_num = 0;   if ( Al_side == 10 ) Al_num = 1; if ( Al_side == 25 ) Al_num = 2;
+  E_Num = E_Num - Al_num*45 + 1;
+  
+  // Get half-length of world to fix z counting [(-L/2, L/2) -> (0, L)]
+  G4double worldZHalfLength = 0; G4Box* worldBox = 0;
+  G4LogicalVolume* worldLV = G4LogicalVolumeStore::GetInstance()->GetVolume("World");
+  if ( worldLV) worldBox = dynamic_cast< G4Box*>(worldLV->GetSolid()); 
+  if ( worldBox ) { worldZHalfLength = worldBox->GetZHalfLength(); }
+	
+  // initial bin
+  G4ThreeVector xyzVertex = step->GetTrack()->GetVertexPosition();
+  G4double zVertex = xyzVertex[2] + worldZHalfLength;
+  G4int zBin_init = floor(zVertex);
+  // final bin
+  G4ThreeVector xyz = step->GetPostStepPoint()->GetPosition();
+  G4double z = xyz[2] + worldZHalfLength;
+  G4int zBin_final = floor(z);
+  
+  // 1_Energy_Deposition
+  G4double particleEDep = step->GetTotalEnergyDeposit();
+  // + final bin
+  fileNameStream.str(""); fileName = "";
+  fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "1/event" << eventNum << ".txt";
+  fileName = fileNameStream.str();
+  fileStream.open (fileName, std::ios::app);
+  fileStream << zBin_final << " " << particleEDep << "\n";
+  fileStream.close();
+  
   // At final step
   if ( step->GetTrack()->GetTrackStatus() != fAlive ) {
-	// Directory info
-	std::ostringstream fileNameStream; G4String fileName;
-	std::ofstream fileStream; G4String fileVarGet;
-	G4String data_dir = "data/";
-	G4String data_dir_geo = "Al";
-	G4String data_dir_energy = "E";
-	G4String data_dir_analysis = "Analysis";
-	
-	// Acqiure state vars
-	G4int Al_side;
-	fileNameStream << data_dir << ".state";
-	fileName = fileNameStream.str();
-	std::ifstream stateFile;
-    stateFile.open(fileName);
-    stateFile >> fileVarGet;
-    Al_side = atoi(fileVarGet);
-    
-    // Primary event number and energy number
-	G4int eventNum = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-	G4double E_Num = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
-	// Adjust event number by state var
-	G4int Al_num = 0;   if ( Al_side == 10 ) Al_num = 1; if ( Al_side == 25 ) Al_num = 2;
-	E_Num = E_Num - Al_num*45 + 1;
-		
-    // particle name, charge, and energy deposited
+	// particle name, charge, and parentID
+	G4int particleParentID = step->GetTrack()->GetParentID();
 	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
     G4double particleCharge = step->GetTrack()->GetDefinition()->GetPDGCharge();
-    G4double particleEDep = step->GetTotalEnergyDeposit();
 	
-	// also E_num goes screwy high
-	G4double worldZHalfLength = 0; G4Box* worldBox = 0;
-	G4LogicalVolume* worldLV = G4LogicalVolumeStore::GetInstance()->GetVolume("World");
-	if ( worldLV) worldBox = dynamic_cast< G4Box*>(worldLV->GetSolid()); 
-    if ( worldBox ) { worldZHalfLength = worldBox->GetZHalfLength(); }
-	
-	// initial bin
-	G4ThreeVector xyzVertex = step->GetTrack()->GetVertexPosition();
-    G4double zVertex = xyzVertex[2] + worldZHalfLength;
-    G4int zBin_init = floor(zVertex);
-    // final bin
-    G4ThreeVector xyz = step->GetPostStepPoint()->GetPosition();
-    G4double z = xyz[2] + worldZHalfLength;
-    G4int zBin_final = floor(z);
-    
-    // 1_Charge_Transfer
+	// 2_Charge_Transfer
     if ( particleCharge != 0 ) {
 	  // - init bin
 	  fileNameStream.str(""); fileName = "";
-      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "1/" << zBin_init << ".txt";
+      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
       fileName = fileNameStream.str();
       fileStream.open (fileName, std::ios::app);
-      fileStream << -particleCharge << "\n";
+      fileStream << zBin_init << " init " << -particleCharge << "\n";
       fileStream.close();
       
 	  // + final_bin
 	  fileNameStream.str(""); fileName = "";
-      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "1/" << zBin_final << ".txt";
+      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
       fileName = fileNameStream.str();
       fileStream.open (fileName, std::ios::app);
-      fileStream << particleCharge << "\n";
+      fileStream << zBin_final << " final " << particleCharge << "\n";
       fileStream.close();
     }
     
-    // 2_Energy_Deposition
-    // + final bin
-	fileNameStream.str(""); fileName = "";
-    fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/" << zBin_final;
-    fileName = fileNameStream.str();
-    fileStream.open (fileName, std::ios::app);
-    fileStream << particleEDep << "\n";
-    fileStream.close();
+    // 3a Electron backscatter via Gamma ray counting (method to come)
+    if ( particleParentID != 0 && particleName == "gamma" ) {
+      G4String volumeName = step->GetTrack()->GetVolume()->GetName();
+      G4String volumeNameVertex = step->GetTrack()->GetLogicalVolumeAtVertex()->GetName();
+      
+      // Check if exiting solid
+      //if ( volumeName == "World" && volumeNameVertex != "World" ) {
+        // Add to tally
+	    fileNameStream.str(""); fileName = "";
+        fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
+        fileName = fileNameStream.str();
+        fileStream.open (fileName, std::ios::app);
+        fileStream << particleName << "\n";
+        fileStream.close();
+	  //}
+	}
+    
+    // 3b,c Particle tallies
+    if ( particleParentID != 0 && particleName != "gamma" && particleName != "e-" ) {
+      // Add to tally
+	  fileNameStream.str(""); fileName = "";
+      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
+      fileName = fileNameStream.str();
+      fileStream.open (fileName, std::ios::app);
+      fileStream << particleName << "\n";
+      fileStream.close();
+    }
   }
 }
