@@ -33,6 +33,12 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   std::ostringstream fileNameStream;
   std::ofstream fileStream;
   G4String fileName;
+  std::ostringstream energyFileNameStream;
+  G4String energyFileName;
+  std::ostringstream chargeFileNameStream;
+  G4String chargeFileName;
+  std::ostringstream tallyFileNameStream;
+  G4String tallyFileName;
   
   // Directory info
   G4String fileVarGet;
@@ -67,53 +73,45 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   G4double particleEDep, particleCharge;
   G4String particleLocation, particleName;
   
-  for ( G4int eventNum = 0; eventNum<numEvents; eventNum++ ) {
-    // 1 Energy Deposition
-    fileNameStream.str(""); fileName = "";
-    fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "1/event" << eventNum << ".txt";
-    fileName = fileNameStream.str();
-    std::ifstream eventFile1;
-    // Wait for run to finish to begin analysis
-    while ( ! eventFile1.good() ) { sleep(1); }
-    eventFile1.open(fileName);
-    // Continuously append to energy bins
-    while ( getline(eventFile1, fileVarGet, ' ') ) {
-      zBin = atoi(fileVarGet);
-      getline(eventFile1, fileVarGet);
-      particleEDep = atof(fileVarGet);
-      energy_bins[zBin] += particleEDep;
-    }
+  // Bin and tally files
+  energyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/energy.txt";
+  energyFileName = energyFileNameStream.str();
+  std::ifstream energyFile;
+  energyFile.open(energyFileName);
+  chargeFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/charge.txt";
+  chargeFileName = chargeFileNameStream.str();
+  std::ifstream chargeFile;
+  chargeFile.open(chargeFileName);
+  tallyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/tally.txt";
+  tallyFileName = tallyFileNameStream.str();
+  std::ifstream tallyFile;
+  tallyFile.open(tallyFileName);
+  
+  // 1 Energy Deposition
+  // Continuously append to energy bins
+  while ( getline(energyFile, fileVarGet, ' ') ) {
+    zBin = atoi(fileVarGet);
+    getline(energyFile, fileVarGet);
+    particleEDep = atof(fileVarGet);
+    energy_bins[zBin] += particleEDep;
+  }
     
-    // 2 Charge Transfer
-    fileNameStream.str(""); fileName = "";
-    fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
-    fileName = fileNameStream.str();
-    std::ifstream eventFile2; eventFile2.open(fileName);
-    // Continuously append to charge bins
-    while ( getline(eventFile2, fileVarGet, ' ') ) {
-      zBin = atoi(fileVarGet);
-      getline(eventFile2, particleLocation, ' ');
-      getline(eventFile2, fileVarGet);
-      particleCharge = atof(fileVarGet);
-      if ( particleLocation == "init" ) charge_bins[zBin] -= particleCharge/numEvents;
-      if ( particleLocation == "final" ) charge_bins[zBin] += particleCharge/numEvents;
-    }
+  // 2 Charge Transfer
+  // Continuously append to charge bins
+  while ( getline(chargeFile, fileVarGet, ' ') ) {
+    zBin = atoi(fileVarGet);
+    getline(chargeFile, fileVarGet);
+    particleCharge = atof(fileVarGet);
+    charge_bins[zBin] += particleCharge;
+  }
 
-    // 3 Particle Tallies
-    fileNameStream.str(""); fileName = "";
-    fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
-    fileName = fileNameStream.str();
-    std::ifstream eventFile3;
-    // Check if particles were produced in event
-    if ( eventFile3.good() ) {
-      eventFile3.open(fileName);
-      // Continuously append to particle bins
-      while ( getline(eventFile3, particleName) ) {
-	if ( particleName == "proton" ) { numProtons++; }
-	if ( particleName == "neutron" ) { numNeutrons++; }
-	if ( particleName == "gamma" ) { numGammas = numGammas+1; }
-      }
-    }
+  // 3 Particle Tallies
+  // Continuously append to particle bins
+  while ( getline(tallyFile, fileVarGet, ' ') ) {
+	numProtons = atoi(fileVarGet);
+	getline(chargeFile, fileVarGet, ' '); numNeutrons = atof(fileVarGet);
+    getline(chargeFile, fileVarGet); numGammas = atof(fileVarGet);
+    
     // Construct normalized production probability matrix
     if ( numProtons > 6 ) numProtons = 6;
     if ( numNeutrons > 6 ) numNeutrons = 6;

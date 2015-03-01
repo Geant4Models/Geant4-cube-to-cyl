@@ -1,2 +1,0 @@
-0 init 1
-71 final 1
