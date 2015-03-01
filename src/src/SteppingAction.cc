@@ -81,7 +81,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
   // final bin
   G4ThreeVector xyz = step->GetPostStepPoint()->GetPosition();
   G4double z = xyz[2] + worldZHalfLength;
-  G4int zBin_final = floor(z);
+  G4int zBin_final = floor(z); if ( zBin_final >= 1149 ) zBin_final = 1149;
   
   // 1 Energy Deposition
   G4double particleEDep = step->GetTotalEnergyDeposit();
@@ -95,23 +95,23 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
   
   // At final step
   if ( step->GetTrack()->GetTrackStatus() != fAlive ) {
-	// particle name, charge, and parentID
-	G4int particleParentID = step->GetTrack()->GetParentID();
-	G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
+    // particle name, charge, and parentID
+    G4int particleParentID = step->GetTrack()->GetParentID();
+    G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
     G4double particleCharge = step->GetTrack()->GetDefinition()->GetPDGCharge();
 	
-	// 2 Charge Transfer
+    // 2 Charge Transfer
     if ( particleCharge != 0 ) {
-	  // - init bin
-	  fileNameStream.str(""); fileName = "";
+      // - init bin
+      fileNameStream.str(""); fileName = "";
       fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
       fileName = fileNameStream.str();
       fileStream.open (fileName, std::ios::app);
-      fileStream << zBin_init << " init " << -particleCharge << "\n";
+      fileStream << zBin_init << " init " << particleCharge << "\n";
       fileStream.close();
       
-	  // + final_bin
-	  fileNameStream.str(""); fileName = "";
+      // + final_bin
+      fileNameStream.str(""); fileName = "";
       fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
       fileName = fileNameStream.str();
       fileStream.open (fileName, std::ios::app);
@@ -121,10 +121,10 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     
     // 3a Electron backscatter via Gamma ray counting (method to come)
     // 3b,c proton and neutron production;
-    // Currently broken
+    // Segfault may be here
     if ( particleParentID != 0 && ( particleName == "gamma" || particleName == "proton" || particleName == "neutron" )  ) {
       // Add to tally
-	  fileNameStream.str(""); fileName = "";
+      fileNameStream.str(""); fileName = "";
       fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
       fileName = fileNameStream.str();
       fileStream.open (fileName, std::ios::app);

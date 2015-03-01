@@ -162,7 +162,7 @@ CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //No help, variable specified on the command line.
-Geant4_DIR:UNINITIALIZED=/usr/local/geant4/install/lib/Geant4-10.0.3/
+Geant4_DIR:UNINITIALIZED=/usr/local/geant4/install/lib/Geant4-10.1.0/
 
 //Value Computed by CMake
 Project_BINARY_DIR:STATIC=/home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build

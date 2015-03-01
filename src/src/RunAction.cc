@@ -10,6 +10,7 @@
 #include <fstream>
 #include <string>
 #include <stdio.h>
+#include <unistd.h>
 #include <sys/types.h>
 
 RunAction::RunAction() : G4UserRunAction() {}
@@ -58,25 +59,29 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   E_Num = E_Num - Al_num*45 + 1;
 
   // Invoke stat vars  
-  G4int zBin, numBins = 1150, numProtons = 0, numNeutrons = 0, numGammas = 0;
-  G4double matrixProtonsNeutrons[7][7] = {};
-  G4double energy_bins[1150] = {};
-  G4double charge_bins[1150] = {};
+  G4int zBin, numBins = 1150;
+  G4double numProtons = 0, numNeutrons = 0, numGammas = 0;
+  G4double matrixProtonsNeutrons[7][7] = {0};
+  G4double energy_bins[1150] = {0};
+  G4double charge_bins[1150] = {0};
   G4double particleEDep, particleCharge;
   G4String particleLocation, particleName;
   
   for ( G4int eventNum = 0; eventNum<numEvents; eventNum++ ) {
-	// 1 Energy Deposition
-	fileNameStream.str(""); fileName = "";
+    // 1 Energy Deposition
+    fileNameStream.str(""); fileName = "";
     fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "1/event" << eventNum << ".txt";
     fileName = fileNameStream.str();
-    std::ifstream eventFile1; eventFile1.open(fileName);
+    std::ifstream eventFile1;
+    // Wait for run to finish to begin analysis
+    while ( ! eventFile1.good() ) { sleep(1); }
+    eventFile1.open(fileName);
     // Continuously append to energy bins
     while ( getline(eventFile1, fileVarGet, ' ') ) {
       zBin = atoi(fileVarGet);
-	  getline(eventFile1, fileVarGet);
-	  particleEDep = atof(fileVarGet);
-	  energy_bins[zBin] += particleEDep;
+      getline(eventFile1, fileVarGet);
+      particleEDep = atof(fileVarGet);
+      energy_bins[zBin] += particleEDep;
     }
     
     // 2 Charge Transfer
@@ -87,31 +92,32 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     // Continuously append to charge bins
     while ( getline(eventFile2, fileVarGet, ' ') ) {
       zBin = atoi(fileVarGet);
-	  getline(eventFile2, particleLocation, ' ');
-	  getline(eventFile2, fileVarGet);
-	  particleCharge = atof(fileVarGet);
-	  if ( particleLocation == "init" ) charge_bins[zBin] -= particleCharge/numEvents;
-	  if ( particleLocation == "final" ) charge_bins[zBin] += particleCharge/numEvents;
+      getline(eventFile2, particleLocation, ' ');
+      getline(eventFile2, fileVarGet);
+      particleCharge = atof(fileVarGet);
+      if ( particleLocation == "init" ) charge_bins[zBin] -= particleCharge/numEvents;
+      if ( particleLocation == "final" ) charge_bins[zBin] += particleCharge/numEvents;
     }
-    
+
     // 3 Particle Tallies
     fileNameStream.str(""); fileName = "";
     fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
     fileName = fileNameStream.str();
-    G4cout << "FileName is " << fileName << G4endl;
-    std::ifstream eventFile3; eventFile3.open(fileName);
-    // Continuously append to particle bins
-    while ( getline(eventFile3, fileVarGet) ) {
-	  particleName = particleName;
-	  G4cout << "Particle is " << particleName << G4endl;
-	  if ( particleName == "proton" ) numProtons++;
-	  if ( particleName == "neutron" ) numNeutrons++;
-	  if ( particleName == "gamma" ) numGammas += 1/numEvents;
+    std::ifstream eventFile3;
+    // Check if particles were produced in event
+    if ( eventFile3.good() ) {
+      eventFile3.open(fileName);
+      // Continuously append to particle bins
+      while ( getline(eventFile3, particleName) ) {
+	if ( particleName == "proton" ) { numProtons++; }
+	if ( particleName == "neutron" ) { numNeutrons++; }
+	if ( particleName == "gamma" ) { numGammas = numGammas+1; }
+      }
     }
     // Construct normalized production probability matrix
     if ( numProtons > 6 ) numProtons = 6;
     if ( numNeutrons > 6 ) numNeutrons = 6;
-    matrixProtonsNeutrons[numProtons][numNeutrons] += 1/numEvents;
+    matrixProtonsNeutrons[int(numProtons)][int(numNeutrons)] += 1;
   }
   
   // Summarize normalized results for energy and charge bins
@@ -123,18 +129,19 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   for ( G4int binNum = 0; binNum<numBins; binNum++ ) {
     fileStream << binNum << " " << energy_bins[binNum] << " " << charge_bins[binNum] << "\n";
   }
+  fileStream.close();
   // Summarize normalized results for production probabilities
   fileNameStream.str(""); fileName = "";
   fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/production.dat";
   fileName = fileNameStream.str();
   fileStream.open (fileName, std::ios::app);
   fileStream << "# Gamma Count and Particle Production Probabilities \n";
-  fileStream << "# " << numGammas << " gammas per event \n";
-  fileStream << "# p\n production probability matrix per event \n";
+  fileStream << "# " << numGammas/numEvents << " gammas per event \n";
+  fileStream << "# production probability matrix per event \n";
   for ( G4int protonInt = 0; protonInt<7; protonInt++ ) {
 	for ( G4int neutronInt = 0; neutronInt<7; neutronInt++ ) {
-      fileStream << matrixProtonsNeutrons[protonInt][neutronInt] << " ";
+      fileStream << (long double)matrixProtonsNeutrons[protonInt][neutronInt]/numEvents << " ";
     }
-    fileStream << "\n ";
+    fileStream << "\n";
   }
 }
