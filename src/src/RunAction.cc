@@ -150,12 +150,6 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/bins.dat";
   fileName = fileNameStream.str();
 
-  // Remove previous worker file
-  G4String rmBins;
-  std::ifstream binsFileStreamTest;
-  binsFileStreamTest.open(fileName);
-  if ( binsFileStreamTest.good() ) { rmBins = "rm " + fileName; system(rmBins); }
-
   fileStream.open (fileName, std::ios::app);
   fileStream << "#  z (mm)   Energy_Dep  Net_Charge\n";
   for ( G4int binNum = 0; binNum<numBins; binNum++ ) {
@@ -166,12 +160,6 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   fileNameStream.str(""); fileName = "";
   fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/production.dat";
   fileName = fileNameStream.str();
-
-  // Remove previous worker file
-  G4String rmProduction;
-  std::ifstream prodFileStreamTest;
-  prodFileStreamTest.open(fileName);
-  if ( prodFileStreamTest.good() ) { rmProduction = "rm " + fileName; system(rmProduction); }
 
   // Add content
   fileStream.open (fileName, std::ios::app);
@@ -192,12 +180,6 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   G4String gnuFileName;
   gnuFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/graphs.gplot";
   gnuFileName = gnuFileNameStream.str();
-
-  // Remove previous worker file
-  G4String rmGnu;
-  std::ifstream gnuFileStreamTest;
-  gnuFileStreamTest.open(gnuFileName);
-  if ( gnuFileStreamTest.good() ) { rmGnu = "rm " + gnuFileName; system(rmGnu); }
 
   // Add content
   gnuFileStream.open (gnuFileName, std::ios::app);
