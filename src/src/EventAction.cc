@@ -83,10 +83,7 @@ void EventAction::EndOfEventAction(const G4Event* event) {
   chargeFileName = chargeFileNameStream.str();
   std::ofstream chargeFile;
   chargeFile.open(chargeFileName, std::ios::app);
-  tallyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/tally.txt";
-  tallyFileName = tallyFileNameStream.str();
   std::ofstream tallyFile;
-  tallyFile.open(tallyFileName, std::ios::app);
   
   // 1 Energy Deposition
   fileNameStream.str(""); fileName = "";
@@ -128,19 +125,34 @@ void EventAction::EndOfEventAction(const G4Event* event) {
   fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
   fileName = fileNameStream.str();
   std::ifstream eventFile3;
+
+  eventFile3.open(fileName);
   // Check if particles were produced in event
   if ( eventFile3.good() ) {
-    eventFile3.open(fileName);
     // Continuously append to particle bins
     while ( getline(eventFile3, particleName) ) {
       if ( particleName == "proton" ) { numProtons++; }
       if ( particleName == "neutron" ) { numNeutrons++; }
       if ( particleName == "gamma" ) { numGammas++; }
     }
+
+    // Add to count file
+    tallyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/tally.txt";
+    tallyFileName = tallyFileNameStream.str();
+    tallyFile.open(tallyFileName, std::ios::app);
     tallyFile << numProtons << " " << numNeutrons << " " << numGammas << "\n";
-    
+    tallyFile.close();
+
     // Remove event file
+    eventFile3.close();
     runRm = "rm " + fileName;
     system(runRm);
+  } else {
+    // Add null to count file
+    tallyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/tally.txt";
+    tallyFileName = tallyFileNameStream.str();
+    tallyFile.open(tallyFileName, std::ios::app);
+    tallyFile << "0 0 0\n";
+    tallyFile.close();
   }
 }

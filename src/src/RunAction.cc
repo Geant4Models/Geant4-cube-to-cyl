@@ -16,7 +16,34 @@
 RunAction::RunAction() : G4UserRunAction() {}
 RunAction::~RunAction() { delete G4AnalysisManager::Instance(); }
 
-void RunAction::BeginOfRunAction(const G4Run* /*run*/) {}
+void RunAction::BeginOfRunAction(const G4Run* run) {
+  // Directory info
+  G4String fileVarGet;
+  G4String data_dir = "data/";
+
+  // I/O vars
+  std::ostringstream fileNameStream;
+  std::ofstream fileStream;
+  G4String fileName;
+
+  // Acqiure state vars
+  G4int Al_side;
+  fileNameStream.str(""); fileName = "";
+  fileNameStream << data_dir << ".state";
+  fileName = fileNameStream.str();
+  std::ifstream stateFile;
+  stateFile.open(fileName);
+  stateFile >> fileVarGet;
+  Al_side = atoi(fileVarGet);
+
+  // Primary energy (run) number and total events
+  G4int E_Num = run->GetRunID();
+  // Adjust Energy number by state var
+  G4int Al_num = 0;   if ( Al_side == 10 ) Al_num = 1; if ( Al_side == 25 ) Al_num = 2;
+  E_Num = E_Num - Al_num*45 + 1;
+
+  G4cout << "Running energy " << E_Num << " for Al=" << Al_side << G4endl;
+}
 
 void RunAction::EndOfRunAction(const G4Run* run) {
   // Energy scoring
@@ -108,9 +135,9 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   // 3 Particle Tallies
   // Continuously append to particle bins
   while ( getline(tallyFile, fileVarGet, ' ') ) {
-	numProtons = atoi(fileVarGet);
-	getline(chargeFile, fileVarGet, ' '); numNeutrons = atof(fileVarGet);
-    getline(chargeFile, fileVarGet); numGammas = atof(fileVarGet);
+    numProtons = atof(fileVarGet);
+    getline(tallyFile, fileVarGet, ' '); numNeutrons = atof(fileVarGet);
+    getline(tallyFile, fileVarGet); numGammas += atof(fileVarGet);
     
     // Construct normalized production probability matrix
     if ( numProtons > 6 ) numProtons = 6;
@@ -122,24 +149,70 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   fileNameStream.str(""); fileName = "";
   fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/bins.dat";
   fileName = fileNameStream.str();
+
+  // Remove previous worker file
+  G4String rmBins;
+  std::ifstream binsFileStreamTest;
+  binsFileStreamTest.open(fileName);
+  if ( binsFileStreamTest.good() ) { rmBins = "rm " + fileName; system(rmBins); }
+
   fileStream.open (fileName, std::ios::app);
   fileStream << "#  z (mm)   Energy_Dep  Net_Charge\n";
   for ( G4int binNum = 0; binNum<numBins; binNum++ ) {
-    fileStream << binNum << " " << energy_bins[binNum] << " " << charge_bins[binNum] << "\n";
+    fileStream << binNum << " " << energy_bins[binNum]/numEvents << " " << charge_bins[binNum]/numEvents << "\n";
   }
   fileStream.close();
   // Summarize normalized results for production probabilities
   fileNameStream.str(""); fileName = "";
   fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/production.dat";
   fileName = fileNameStream.str();
+
+  // Remove previous worker file
+  G4String rmProduction;
+  std::ifstream prodFileStreamTest;
+  prodFileStreamTest.open(fileName);
+  if ( prodFileStreamTest.good() ) { rmProduction = "rm " + fileName; system(rmProduction); }
+
+  // Add content
   fileStream.open (fileName, std::ios::app);
-  fileStream << "# Gamma Count and Particle Production Probabilities \n";
-  fileStream << "# " << numGammas/numEvents << " gammas per event \n";
-  fileStream << "# production probability matrix per event \n";
+  fileStream << "# Gamma Count and Particle Production Probabilities \n"  << \
+                "# " << numGammas/numEvents << " gammas per event \n" << \
+                "# [ p \\ n ] production probability matrix per event \n";
   for ( G4int protonInt = 0; protonInt<7; protonInt++ ) {
-	for ( G4int neutronInt = 0; neutronInt<7; neutronInt++ ) {
+    for ( G4int neutronInt = 0; neutronInt<7; neutronInt++ ) {
       fileStream << (long double)matrixProtonsNeutrons[protonInt][neutronInt]/numEvents << " ";
     }
     fileStream << "\n";
   }
+
+  // Construct gnuplot file for run
+  std::ostringstream gnuFileNameStream;
+  std::ofstream gnuFileStream;
+
+  G4String gnuFileName;
+  gnuFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/graphs.gplot";
+  gnuFileName = gnuFileNameStream.str();
+
+  // Remove previous worker file
+  G4String rmGnu;
+  std::ifstream gnuFileStreamTest;
+  gnuFileStreamTest.open(gnuFileName);
+  if ( gnuFileStreamTest.good() ) { rmGnu = "rm " + gnuFileName; system(rmGnu); }
+
+  // Add content
+  gnuFileStream.open (gnuFileName, std::ios::app);
+  gnuFileStream << "set term png\n" << \
+                   "set output \"fig_EDep.png\"\n" << \
+                   "set key samplen 2 spacing 0.9 font \",8\" below\n" << \
+                   "set title \"Energy Deposition by Millimeter\"\n" << \
+                   "set xlabel \"Position (mm)\"\n" << \
+                   "set ylabel \"Energy Deposition\"\n" << \
+                   "plot \"bins.dat\" u 1:2 t \"Energy_Dep\"\n" << \
+                   "set output \"fig_ChargeDep.png\"\n" << \
+                   "set key samplen 2 spacing 0.9 font \",8\" below\n" << \
+                   "set title \"Charge Transfer by Millimeter\"\n" << \
+                   "set xlabel \"Position (mm)\"\n" << \
+                   "set ylabel \"Net Charge\"\n" << \
+                   "plot \"bins.dat\" u 1:3 t \"Net_Charge\"";
+  gnuFileStream.close();
 }
