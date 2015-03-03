@@ -96,44 +96,47 @@ int main(int argc,char** argv) {
 
   // batch mode  
   if ( macro.size() ) {
-	// 10 micrometer particle track cuts
+    // 10 micrometer particle track cuts
     G4String cutCommand = "/run/setCut 0.01 mm";
     UImanager->ApplyCommand(cutCommand);
     
     // Experimental Parameters
-	G4int Al_side[3] = {5, 10, 25};
+    G4int Al_side[3] = {5, 10, 25};
 	
-	// Create data analysis directory tree
-	G4cout << "Creating data analysis tree..." << G4endl;
-	std::ostringstream dirCommandStream;
-	G4String data_dir = "data/";
-	G4String data_dir_geo = "Al";
-	G4String data_dir_particle = "p";
-	G4String data_dir_energy = "E";
-	G4String data_dir_analysis = "Analysis";
-	// Make base dir
-	dirCommandStream << "mkdir -p " << data_dir;
-	G4String dirCommand = dirCommandStream.str();
+    // Create data analysis directory tree
+    G4cout << "Creating data analysis tree..." << G4endl;
+    std::ostringstream dirCommandStream;
+    G4String data_dir = "data/";
+    G4String data_dir_geo = "Al";
+    G4String data_dir_particle = "p";
+    G4String data_dir_energy = "E";
+    G4String data_dir_analysis = "Analysis";
+
+    // Make base dir
+    dirCommandStream << "mkdir -p " << data_dir;
+    G4String dirCommand = dirCommandStream.str();
     system(dirCommand);
+
+    // Geometry dir iteration
     for (G4int al_num=0; al_num<3; al_num++) {
-	  // Geometry dir iteration
-	  dirCommandStream.str(""); dirCommand = "";
+      dirCommandStream.str(""); dirCommand = "";
       dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/";
-	  dirCommand = dirCommandStream.str();
+      dirCommand = dirCommandStream.str();
       system(dirCommand);
       
-      for (G4int particle_num=1; particle_num<=2; particle_num++) {
-		if ( particle_num == 2) { data_dir_particle = "n"; }
+      // p,nE#/ dir iteration
+      for ( G4int particle_num=1; particle_num<=2; particle_num++ ) {
+        if ( particle_num == 1 ) { data_dir_particle = "p"; }
+        if ( particle_num == 2 ) { data_dir_particle = "n"; }
 		  
         for (G4int E_num=1; E_num<=45; E_num++) {
-          // Energy dir iteration
           dirCommandStream.str(""); dirCommand = "";
           dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_particle << data_dir_energy << E_num << "/";
-	      dirCommand = dirCommandStream.str();
+	  dirCommand = dirCommandStream.str();
           system(dirCommand);
         
+          // Analysis dir iteration
           for (G4int analysis_num=1; analysis_num<=3; analysis_num++) {
-            // Analysis dir iteration
             dirCommandStream.str(""); dirCommand = "";
             dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_particle << data_dir_energy << E_num << "/" << data_dir_analysis << analysis_num << "/";
 	        dirCommand = dirCommandStream.str();
@@ -141,21 +144,21 @@ int main(int argc,char** argv) {
           }
         }
       }
-	}
+    }
     
     for ( G4int side_i=0; side_i<3; side_i++ ) {
-	  // Assign thickness
-	  detConstruction->AlSideIteration(side_i);
-	  runManager->GeometryHasBeenModified();
+      // Assign thickness
+      detConstruction->AlSideIteration(side_i);
+      runManager->GeometryHasBeenModified();
 	
-	  // Create state flag
-	  dirCommandStream.str(""); dirCommand = "";
+      // Create state flag
+      dirCommandStream.str(""); dirCommand = "";
       dirCommandStream << "echo " << Al_side[side_i] << " > " << data_dir << ".state";
       dirCommand = dirCommandStream.str();
       system(dirCommand);
 	  
-	  // Run experimental beam energies
-	  G4String command = "/control/execute ";
+      // Run experimental beam energies
+      G4String command = "/control/execute ";
       UImanager->ApplyCommand(command+macro);
     }
     

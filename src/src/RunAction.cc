@@ -198,10 +198,10 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     G4int E_Int = (E_Num % 5); if ( E_Int == 0 ) { E_Int = 5; }
     std::ostringstream energy_stringStream;
     energy_stringStream << E_Int;
-    if ( E_Num % 15 > 5 ) { energy_stringStream << "0"; }
-    if ( E_Num % 15 > 10 ) { energy_stringStream << "0"; }
+    if ( (( E_Num % 15 ) > 5) || (( E_Num % 15) == 0) ) { energy_stringStream << "0"; }
+    if ( (( E_Num % 15 ) > 10) || (( E_Num % 15) == 0) ) { energy_stringStream << "0"; }
     if ( ( 15 < E_Num ) && ( E_Num < 31 ) ) { energy_stringStream << " k"; }
-    if ( ( E_Num > 30 ) && ( E_Num < 46) ) { energy_stringStream << " Me"; }
+    if ( ( E_Num > 30 ) && ( E_Num < 46) ) { energy_stringStream << " M"; }
     energy_stringStream << "eV";
     if ( data_dir_particle == "p" ) { energy_stringStream << " Protons"; }
     if ( data_dir_particle == "n" ) { energy_stringStream << " Neutrons"; }
@@ -212,15 +212,15 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     gnuFileStream << "set term png\n" << \
                      "set output \"fig_EDep.png\"\n" << \
                      "set key samplen 2 spacing 0.9 font \",8\" below\n" << \
-                     "set title \"Energy Deposition per " << energy_string << "\n" << \
+                     "set title \"Net Energy Deposition per " << energy_string << "\n" << \
                      "set xlabel \"Position (mm)\"\n" << \
-                     "set ylabel \"dE/dx (eV/[mm * p+])\"\n" << \
+                     "set ylabel \"Energy (eV/" << data_dir_particle << ")\"\n" << \
                      "plot \"bins.dat\" u 1:2 t \"Energy_Dep\"\n" << \
                      "set output \"fig_ChargeDep.png\"\n" << \
                      "set key samplen 2 spacing 0.9 font \",8\" below\n" << \
                      "set title \"Net Charge per " << energy_string << "\n" << \
                      "set xlabel \"Position (mm)\"\n" << \
-                     "set ylabel \"dQ/dx (e/[mm * p+])\"\n" << \
+                     "set ylabel \"Charge (e/" << data_dir_particle << ")\"\n" << \
                      "set yrange [-1:1]\n" << \
                      "plot \"bins.dat\" u 1:3 t \"Net_Charge\"\n";
     gnuFileStream.close();
