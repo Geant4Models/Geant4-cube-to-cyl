@@ -49,6 +49,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
   G4String fileVarGet;
   G4String data_dir = "data/";
   G4String data_dir_geo = "Al";
+  G4String data_dir_particle = "p";
   G4String data_dir_energy = "E";
   G4String data_dir_analysis = "Analysis";
   
@@ -64,9 +65,10 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
   // Primary event number and energy (run) number
   G4int eventNum = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
   G4int E_Num = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
-  // Adjust Energy number by state var
+  // Adjust Energy number by state var, beam particle by energy number
   G4int Al_num = 0;   if ( Al_side == 10 ) Al_num = 1; if ( Al_side == 25 ) Al_num = 2;
-  E_Num = E_Num - Al_num*45 + 1;
+  E_Num = E_Num - Al_num*90 + 1;
+  if ( E_Num > 45 ) { E_Num = E_Num - 45; data_dir_particle = "n"; }
   
   // Get half-length of world to fix z counting [(-L/2, L/2) -> (0, L)]
   G4double worldZHalfLength = 0; G4Box* worldBox = 0;
@@ -87,7 +89,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
   G4double particleEDep = step->GetTotalEnergyDeposit();
   // + final bin
   fileNameStream.str(""); fileName = "";
-  fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "1/event" << eventNum << ".txt";
+  fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_analysis << "1/event" << eventNum << ".txt";
   fileName = fileNameStream.str();
   fileStream.open (fileName, std::ios::app);
   fileStream << zBin_final << " " << particleEDep << "\n";
@@ -104,7 +106,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     if ( particleCharge != 0 ) {
       // - init bin
       fileNameStream.str(""); fileName = "";
-      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
+      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
       fileName = fileNameStream.str();
       fileStream.open (fileName, std::ios::app);
       fileStream << zBin_init << " init " << particleCharge << "\n";
@@ -112,7 +114,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
       
       // + final_bin
       fileNameStream.str(""); fileName = "";
-      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
+      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
       fileName = fileNameStream.str();
       fileStream.open (fileName, std::ios::app);
       fileStream << zBin_final << " final " << particleCharge << "\n";
@@ -125,7 +127,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     if ( particleParentID != 0 && ( particleName == "gamma" || particleName == "proton" || particleName == "neutron" )  ) {
       // Add to tally
       fileNameStream.str(""); fileName = "";
-      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
+      fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
       fileName = fileNameStream.str();
       fileStream.open (fileName, std::ios::app);
       fileStream << particleName << "\n";

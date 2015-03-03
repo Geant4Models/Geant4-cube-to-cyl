@@ -1,0 +1,14 @@
+set term png
+set output "fig_EDep.png"
+set key samplen 2 spacing 0.9 font ",8" below
+set title "Energy Deposition per 4eV Protons
+set xlabel "Position (mm)"
+set ylabel "dE/dx (eV/[mm * p+])"
+plot "bins.dat" u 1:2 t "Energy_Dep"
+set output "fig_ChargeDep.png"
+set key samplen 2 spacing 0.9 font ",8" below
+set title "Net Charge per 4eV Protons
+set xlabel "Position (mm)"
+set ylabel "dQ/dx (e/[mm * p+])"
+set yrange [-1:1]
+plot "bins.dat" u 1:3 t "Net_Charge"

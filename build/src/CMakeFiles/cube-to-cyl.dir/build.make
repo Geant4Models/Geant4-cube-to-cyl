@@ -72,124 +72,9 @@ src/CMakeFiles/cube-to-cyl.dir/cube-to-cyl.cc.o.provides: src/CMakeFiles/cube-to
 
 src/CMakeFiles/cube-to-cyl.dir/cube-to-cyl.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/cube-to-cyl.cc.o
 
-src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
-src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o: ../src/src/RunAction.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/RunAction.cc
-
-src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.i"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/RunAction.cc > CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.i
-
-src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.s"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/RunAction.cc -o CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.s
-
-src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.requires:
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.requires
-
-src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.provides: src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.requires
-	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.provides.build
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.provides
-
-src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o
-
-src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
-src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o: ../src/src/ActionInitialization.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/ActionInitialization.cc
-
-src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.i"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/ActionInitialization.cc > CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.i
-
-src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.s"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/ActionInitialization.cc -o CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.s
-
-src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.requires:
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.requires
-
-src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.provides: src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.requires
-	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.provides.build
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.provides
-
-src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o
-
-src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
-src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o: ../src/src/DetectorConstruction.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/DetectorConstruction.cc
-
-src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.i"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/DetectorConstruction.cc > CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.i
-
-src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.s"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/DetectorConstruction.cc -o CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.s
-
-src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.requires:
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.requires
-
-src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.provides: src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.requires
-	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.provides.build
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.provides
-
-src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o
-
-src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
-src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o: ../src/src/PrimaryGeneratorAction.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/PrimaryGeneratorAction.cc
-
-src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.i"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/PrimaryGeneratorAction.cc > CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.i
-
-src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.s"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/PrimaryGeneratorAction.cc -o CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.s
-
-src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.requires:
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.requires
-
-src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.provides: src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.requires
-	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.provides.build
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.provides
-
-src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o
-
-src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
-src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o: ../src/src/EventAction.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_6)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/EventAction.cc
-
-src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.i"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/EventAction.cc > CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.i
-
-src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.s"
-	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/EventAction.cc -o CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.s
-
-src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.requires:
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.requires
-
-src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.provides: src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.requires
-	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.provides.build
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.provides
-
-src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o
-
 src/CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
 src/CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o: ../src/src/SteppingAction.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o"
 	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/SteppingAction.cc
 
@@ -210,26 +95,141 @@ src/CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o.provides: src/CMakeFiles/
 
 src/CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o
 
+src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
+src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o: ../src/src/DetectorConstruction.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/DetectorConstruction.cc
+
+src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.i"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/DetectorConstruction.cc > CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.i
+
+src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.s"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/DetectorConstruction.cc -o CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.s
+
+src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.requires:
+.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.requires
+
+src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.provides: src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.requires
+	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.provides.build
+.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.provides
+
+src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o
+
+src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
+src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o: ../src/src/RunAction.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/RunAction.cc
+
+src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.i"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/RunAction.cc > CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.i
+
+src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.s"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/RunAction.cc -o CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.s
+
+src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.requires:
+.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.requires
+
+src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.provides: src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.requires
+	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.provides.build
+.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.provides
+
+src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o
+
+src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
+src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o: ../src/src/EventAction.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/EventAction.cc
+
+src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.i"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/EventAction.cc > CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.i
+
+src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.s"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/EventAction.cc -o CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.s
+
+src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.requires:
+.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.requires
+
+src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.provides: src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.requires
+	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.provides.build
+.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.provides
+
+src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o
+
+src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
+src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o: ../src/src/ActionInitialization.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/ActionInitialization.cc
+
+src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.i"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/ActionInitialization.cc > CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.i
+
+src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.s"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/ActionInitialization.cc -o CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.s
+
+src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.requires:
+.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.requires
+
+src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.provides: src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.requires
+	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.provides.build
+.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.provides
+
+src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o
+
+src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o: src/CMakeFiles/cube-to-cyl.dir/flags.make
+src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o: ../src/src/PrimaryGeneratorAction.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o -c /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/PrimaryGeneratorAction.cc
+
+src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.i"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/PrimaryGeneratorAction.cc > CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.i
+
+src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.s"
+	cd /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src/src/PrimaryGeneratorAction.cc -o CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.s
+
+src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.requires:
+.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.requires
+
+src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.provides: src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.requires
+	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.provides.build
+.PHONY : src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.provides
+
+src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.provides.build: src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o
+
 # Object files for target cube-to-cyl
 cube__to__cyl_OBJECTS = \
 "CMakeFiles/cube-to-cyl.dir/cube-to-cyl.cc.o" \
-"CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o" \
-"CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o" \
+"CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o" \
 "CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o" \
-"CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o" \
+"CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o" \
 "CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o" \
-"CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o"
+"CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o" \
+"CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o"
 
 # External object files for target cube-to-cyl
 cube__to__cyl_EXTERNAL_OBJECTS =
 
 src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/cube-to-cyl.cc.o
-src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o
-src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o
-src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o
-src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o
-src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o
 src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o
+src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o
+src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o
+src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o
+src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o
+src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o
 src/cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/build.make
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4Tree.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4FR.so
@@ -262,7 +262,6 @@ src/cube-to-cyl: /usr/local/geant4/install/lib/libG4intercoms.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4global.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4clhep.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4zlib.so
-src/cube-to-cyl: /usr/local/geant4/install/lib/libG4geomUSolids.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4FR.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4vis_management.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4modeling.so
@@ -286,7 +285,6 @@ src/cube-to-cyl: /usr/local/geant4/install/lib/libG4digits_hits.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4track.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4particles.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4geometry.so
-src/cube-to-cyl: /usr/local/geant4/install/lib/libG4geomUSolids.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4materials.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4graphics_reps.so
 src/cube-to-cyl: /usr/local/geant4/install/lib/libG4intercoms.so
@@ -301,12 +299,12 @@ src/CMakeFiles/cube-to-cyl.dir/build: src/cube-to-cyl
 .PHONY : src/CMakeFiles/cube-to-cyl.dir/build
 
 src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/cube-to-cyl.cc.o.requires
-src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.requires
-src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.requires
-src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.requires
-src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.requires
-src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.requires
 src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/SteppingAction.cc.o.requires
+src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/DetectorConstruction.cc.o.requires
+src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/RunAction.cc.o.requires
+src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/EventAction.cc.o.requires
+src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/ActionInitialization.cc.o.requires
+src/CMakeFiles/cube-to-cyl.dir/requires: src/CMakeFiles/cube-to-cyl.dir/src/PrimaryGeneratorAction.cc.o.requires
 .PHONY : src/CMakeFiles/cube-to-cyl.dir/requires
 
 src/CMakeFiles/cube-to-cyl.dir/clean:

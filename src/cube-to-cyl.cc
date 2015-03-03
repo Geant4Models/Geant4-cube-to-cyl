@@ -108,6 +108,7 @@ int main(int argc,char** argv) {
 	std::ostringstream dirCommandStream;
 	G4String data_dir = "data/";
 	G4String data_dir_geo = "Al";
+	G4String data_dir_particle = "p";
 	G4String data_dir_energy = "E";
 	G4String data_dir_analysis = "Analysis";
 	// Make base dir
@@ -121,19 +122,23 @@ int main(int argc,char** argv) {
 	  dirCommand = dirCommandStream.str();
       system(dirCommand);
       
-      for (G4int E_num=1; E_num<=45; E_num++) {
-        // Energy dir iteration
-        dirCommandStream.str(""); dirCommand = "";
-        dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_energy << E_num << "/";
-	    dirCommand = dirCommandStream.str();
-        system(dirCommand);
-        
-        for (G4int analysis_num=1; analysis_num<=3; analysis_num++) {
-          // Analysis dir iteration
+      for (G4int particle_num=1; particle_num<=2; particle_num++) {
+		if ( particle_num == 2) { data_dir_particle = "n"; }
+		  
+        for (G4int E_num=1; E_num<=45; E_num++) {
+          // Energy dir iteration
           dirCommandStream.str(""); dirCommand = "";
-          dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_energy << E_num << "/" << data_dir_analysis << analysis_num << "/";
+          dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_particle << data_dir_energy << E_num << "/";
 	      dirCommand = dirCommandStream.str();
           system(dirCommand);
+        
+          for (G4int analysis_num=1; analysis_num<=3; analysis_num++) {
+            // Analysis dir iteration
+            dirCommandStream.str(""); dirCommand = "";
+            dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/" << data_dir_particle << data_dir_energy << E_num << "/" << data_dir_analysis << analysis_num << "/";
+	        dirCommand = dirCommandStream.str();
+            system(dirCommand);
+          }
         }
       }
 	}

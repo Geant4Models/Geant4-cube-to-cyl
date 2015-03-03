@@ -48,6 +48,7 @@ void EventAction::EndOfEventAction(const G4Event* event) {
   G4String fileVarGet;
   G4String data_dir = "data/";
   G4String data_dir_geo = "Al";
+  G4String data_dir_particle = "p";
   G4String data_dir_energy = "E";
   G4String data_dir_analysis = "Analysis";
   
@@ -64,9 +65,10 @@ void EventAction::EndOfEventAction(const G4Event* event) {
   // Primary energy (run) number and event number
   G4int E_Num = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
   G4int eventNum = event->GetEventID();
-  // Adjust Energy number by state var
+  // Adjust Energy number by state var, beam particle by energy number
   G4int Al_num = 0;   if ( Al_side == 10 ) Al_num = 1; if ( Al_side == 25 ) Al_num = 2;
-  E_Num = E_Num - Al_num*45 + 1;
+  E_Num = E_Num - Al_num*90 + 1;
+  if ( E_Num > 45 ) { E_Num = E_Num - 45; data_dir_particle = "n"; }
 
   // Invoke stat vars  
   G4int zBin;
@@ -75,11 +77,11 @@ void EventAction::EndOfEventAction(const G4Event* event) {
   G4String particleLocation, particleName;
   
   // Bin and tally files
-  energyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/energy.txt";
+  energyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/energy.txt";
   energyFileName = energyFileNameStream.str();
   std::ofstream energyFile;
   energyFile.open(energyFileName, std::ios::app);
-  chargeFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/charge.txt";
+  chargeFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/charge.txt";
   chargeFileName = chargeFileNameStream.str();
   std::ofstream chargeFile;
   chargeFile.open(chargeFileName, std::ios::app);
@@ -87,7 +89,7 @@ void EventAction::EndOfEventAction(const G4Event* event) {
   
   // 1 Energy Deposition
   fileNameStream.str(""); fileName = "";
-  fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "1/event" << eventNum << ".txt";
+  fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_analysis << "1/event" << eventNum << ".txt";
   fileName = fileNameStream.str();
   std::ifstream eventFile1;
   eventFile1.open(fileName);
@@ -104,25 +106,28 @@ void EventAction::EndOfEventAction(const G4Event* event) {
   
   // 2 Charge Transfer
   fileNameStream.str(""); fileName = "";
-  fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
+  fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_analysis << "2/event" << eventNum << ".txt";
   fileName = fileNameStream.str();
   std::ifstream eventFile2; eventFile2.open(fileName);
-  // Continuously append to charge bins
-  while ( getline(eventFile2, fileVarGet, ' ') ) {
-    zBin = atoi(fileVarGet);
-    getline(eventFile2, particleLocation, ' ');
-    getline(eventFile2, fileVarGet);
-    particleCharge = atof(fileVarGet);
-    if ( particleLocation == "init" ) chargeFile << zBin << " " << -particleCharge << "\n";
-    if ( particleLocation == "final" ) chargeFile << zBin << " " << particleCharge << "\n";
+  // Check if charge was transferred in event
+  if ( eventFile2.good() ) {
+    // Continuously append to charge bins
+    while ( getline(eventFile2, fileVarGet, ' ') ) {
+      zBin = atoi(fileVarGet);
+      getline(eventFile2, particleLocation, ' ');
+      getline(eventFile2, fileVarGet);
+      particleCharge = atof(fileVarGet);
+      if ( particleLocation == "init" ) chargeFile << zBin << " " << -particleCharge << "\n";
+      if ( particleLocation == "final" ) chargeFile << zBin << " " << particleCharge << "\n";
+    }
+    // Remove event file
+    runRm = "rm " + fileName;
+    system(runRm);
   }
-  // Remove event file
-  runRm = "rm " + fileName;
-  system(runRm);
   
   // 3 Particle Tallies
   fileNameStream.str(""); fileName = "";
-  fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
+  fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
   fileName = fileNameStream.str();
   std::ifstream eventFile3;
 
@@ -137,7 +142,7 @@ void EventAction::EndOfEventAction(const G4Event* event) {
     }
 
     // Add to count file
-    tallyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/tally.txt";
+    tallyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/tally.txt";
     tallyFileName = tallyFileNameStream.str();
     tallyFile.open(tallyFileName, std::ios::app);
     tallyFile << numProtons << " " << numNeutrons << " " << numGammas << "\n";
@@ -149,7 +154,7 @@ void EventAction::EndOfEventAction(const G4Event* event) {
     system(runRm);
   } else {
     // Add null to count file
-    tallyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/tally.txt";
+    tallyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/tally.txt";
     tallyFileName = tallyFileNameStream.str();
     tallyFile.open(tallyFileName, std::ios::app);
     tallyFile << "0 0 0\n";

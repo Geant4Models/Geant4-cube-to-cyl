@@ -49,7 +49,9 @@ set(cube-to-cyl_SCRIPTS
   init_vis.mac
   run.in
   debugrun.mac
-  run.mac
+  run10.mac
+  run100.mac
+  run1000.mac
   vis.mac
   )
 

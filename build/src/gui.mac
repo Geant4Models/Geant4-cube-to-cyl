@@ -42,4 +42,4 @@
 /run/printProgress 100
 #
 # User defined icon :
-/gui/addIcon "Run beam on" user_icon "/control/execute run.mac" run.png 
+/gui/addIcon "Run beam on" user_icon "/control/execute run10.mac" run.png 

@@ -4,138 +4,277 @@
 /gun/particle proton
 #
 /gun/energy 1 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 2 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 3 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 4 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 5 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 10 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 20 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 30 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 40 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 50 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 100 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 200 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 300 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 400 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 500 eV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 1 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 2 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 3 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 4 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 5 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 10 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 20 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 30 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 40 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 50 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 100 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 200 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 300 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 400 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 500 keV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 1 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 2 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 3 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 4 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 5 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 10 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 20 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 30 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 40 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 50 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 100 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 200 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 300 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 400 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
 /gun/energy 500 MeV
-/run/beamOn 1000
+/run/beamOn 100000
 #
+# Run neutron beam ...
+/gun/particle neutron
+#
+/gun/energy 1 eV
+/run/beamOn 100000
+#
+/gun/energy 2 eV
+/run/beamOn 100000
+#
+/gun/energy 3 eV
+/run/beamOn 100000
+#
+/gun/energy 4 eV
+/run/beamOn 100000
+#
+/gun/energy 5 eV
+/run/beamOn 100000
+#
+/gun/energy 10 eV
+/run/beamOn 100000
+#
+/gun/energy 20 eV
+/run/beamOn 100000
+#
+/gun/energy 30 eV
+/run/beamOn 100000
+#
+/gun/energy 40 eV
+/run/beamOn 100000
+#
+/gun/energy 50 eV
+/run/beamOn 100000
+#
+/gun/energy 100 eV
+/run/beamOn 100000
+#
+/gun/energy 200 eV
+/run/beamOn 100000
+#
+/gun/energy 300 eV
+/run/beamOn 100000
+#
+/gun/energy 400 eV
+/run/beamOn 100000
+#
+/gun/energy 500 eV
+/run/beamOn 100000
+#
+/gun/energy 1 keV
+/run/beamOn 100000
+#
+/gun/energy 2 keV
+/run/beamOn 100000
+#
+/gun/energy 3 keV
+/run/beamOn 100000
+#
+/gun/energy 4 keV
+/run/beamOn 100000
+#
+/gun/energy 5 keV
+/run/beamOn 100000
+#
+/gun/energy 10 keV
+/run/beamOn 100000
+#
+/gun/energy 20 keV
+/run/beamOn 100000
+#
+/gun/energy 30 keV
+/run/beamOn 100000
+#
+/gun/energy 40 keV
+/run/beamOn 100000
+#
+/gun/energy 50 keV
+/run/beamOn 100000
+#
+/gun/energy 100 keV
+/run/beamOn 100000
+#
+/gun/energy 200 keV
+/run/beamOn 100000
+#
+/gun/energy 300 keV
+/run/beamOn 100000
+#
+/gun/energy 400 keV
+/run/beamOn 100000
+#
+/gun/energy 500 keV
+/run/beamOn 100000
+#
+/gun/energy 1 MeV
+/run/beamOn 100000
+#
+/gun/energy 2 MeV
+/run/beamOn 100000
+#
+/gun/energy 3 MeV
+/run/beamOn 100000
+#
+/gun/energy 4 MeV
+/run/beamOn 100000
+#
+/gun/energy 5 MeV
+/run/beamOn 100000
+#
+/gun/energy 10 MeV
+/run/beamOn 100000
+#
+/gun/energy 20 MeV
+/run/beamOn 100000
+#
+/gun/energy 30 MeV
+/run/beamOn 100000
+#
+/gun/energy 40 MeV
+/run/beamOn 100000
+#
+/gun/energy 50 MeV
+/run/beamOn 100000
+#
+/gun/energy 100 MeV
+/run/beamOn 100000
+#
+/gun/energy 200 MeV
+/run/beamOn 100000
+#
+/gun/energy 300 MeV
+/run/beamOn 100000
+#
+/gun/energy 400 MeV
+/run/beamOn 100000
+#
+/gun/energy 500 MeV
+/run/beamOn 100000
+#
+
 /tracking/verbose 0

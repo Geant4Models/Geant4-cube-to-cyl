@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <algorithm>
 
 RunAction::RunAction() : G4UserRunAction() {}
 RunAction::~RunAction() { delete G4AnalysisManager::Instance(); }
@@ -23,6 +24,7 @@ void RunAction::BeginOfRunAction(const G4Run* run) {
     // Directory info
     G4String fileVarGet;
     G4String data_dir = "data/";
+    G4String data_dir_particle = "p";
 
     // I/O vars
     std::ostringstream fileNameStream;
@@ -41,11 +43,12 @@ void RunAction::BeginOfRunAction(const G4Run* run) {
 
     // Primary energy (run) number and total events
     G4int E_Num = run->GetRunID();
-    // Adjust Energy number by state var
+    // Adjust Energy number by state var, beam particle by energy number
     G4int Al_num = 0;   if ( Al_side == 10 ) Al_num = 1; if ( Al_side == 25 ) Al_num = 2;
-    E_Num = E_Num - Al_num*45 + 1;
+    E_Num = E_Num - Al_num*90 + 1;
+    if ( E_Num > 45 ) { E_Num = E_Num - 45; data_dir_particle = "n"; }
 
-    G4cout << "Running energy " << E_Num << " for Al=" << Al_side << G4endl;
+    G4cout << "Running " << data_dir_particle << " energy #" << E_Num << " for Al=" << Al_side << G4endl;
   }
 }
 
@@ -75,6 +78,7 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   G4String fileVarGet;
   G4String data_dir = "data/";
   G4String data_dir_geo = "Al";
+  G4String data_dir_particle = "p";
   G4String data_dir_energy = "E";
   G4String data_dir_analysis = "Analysis";
   
@@ -91,9 +95,10 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   // Primary energy (run) number and total events
   G4int E_Num = run->GetRunID();
   G4int numEvents = run->GetNumberOfEventToBeProcessed();
-  // Adjust Energy number by state var
+  // Adjust Energy number by state var, beam particle by energy number
   G4int Al_num = 0;   if ( Al_side == 10 ) Al_num = 1; if ( Al_side == 25 ) Al_num = 2;
-  E_Num = E_Num - Al_num*45 + 1;
+  E_Num = E_Num - Al_num*90 + 1;
+  if ( E_Num > 45 ) { E_Num = E_Num - 45; data_dir_particle = "n"; }
 
   // Invoke stat vars  
   G4int zBin, numBins = 1150;
@@ -105,15 +110,15 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   G4String particleLocation, particleName;
   
   // Bin and tally files
-  energyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/energy.txt";
+  energyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/energy.txt";
   energyFileName = energyFileNameStream.str();
   std::ifstream energyFile;
   energyFile.open(energyFileName);
-  chargeFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/charge.txt";
+  chargeFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/charge.txt";
   chargeFileName = chargeFileNameStream.str();
   std::ifstream chargeFile;
   chargeFile.open(chargeFileName);
-  tallyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/tally.txt";
+  tallyFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/tally.txt";
   tallyFileName = tallyFileNameStream.str();
   std::ifstream tallyFile;
   tallyFile.open(tallyFileName);
@@ -157,9 +162,8 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   
     // Summarize normalized results for energy and charge bins
     fileNameStream.str(""); fileName = "";
-    fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/bins.dat";
+    fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/bins.dat";
     fileName = fileNameStream.str();
-
     fileStream.open (fileName, std::ios::app);
     fileStream << "#  z (mm)   Energy_Dep  Net_Charge\n";
     for ( G4int binNum = 0; binNum<numBins; binNum++ ) {
@@ -168,7 +172,7 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     fileStream.close();
     // Summarize normalized results for production probabilities
     fileNameStream.str(""); fileName = "";
-    fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/production.dat";
+    fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/production.dat";
     fileName = fileNameStream.str();
 
     // Add content
@@ -187,30 +191,44 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     std::ostringstream gnuFileNameStream;
     std::ofstream gnuFileStream;
     G4String gnuFileName;
-    gnuFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "/graphs.gplot";
+    gnuFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/graphs.gplot";
     gnuFileName = gnuFileNameStream.str();
 
+    // Energies for label
+    G4int E_Int = (E_Num % 5); if ( E_Int == 0 ) { E_Int = 5; }
+    std::ostringstream energy_stringStream;
+    energy_stringStream << E_Int;
+    if ( E_Num % 15 > 5 ) { energy_stringStream << "0"; }
+    if ( E_Num % 15 > 10 ) { energy_stringStream << "0"; }
+    if ( ( 15 < E_Num ) && ( E_Num < 31 ) ) { energy_stringStream << " k"; }
+    if ( ( E_Num > 30 ) && ( E_Num < 46) ) { energy_stringStream << " Me"; }
+    energy_stringStream << "eV";
+    if ( data_dir_particle == "p" ) { energy_stringStream << " Protons"; }
+    if ( data_dir_particle == "n" ) { energy_stringStream << " Neutrons"; }
+    G4String energy_string = energy_stringStream.str();
+    
     // Add content
     gnuFileStream.open (gnuFileName);
     gnuFileStream << "set term png\n" << \
                      "set output \"fig_EDep.png\"\n" << \
                      "set key samplen 2 spacing 0.9 font \",8\" below\n" << \
-                     "set title \"Energy Deposition by Millimeter\"\n" << \
+                     "set title \"Energy Deposition per " << energy_string << "\n" << \
                      "set xlabel \"Position (mm)\"\n" << \
-                     "set ylabel \"Energy Deposition\"\n" << \
+                     "set ylabel \"dE/dx (eV/[mm * p+])\"\n" << \
                      "plot \"bins.dat\" u 1:2 t \"Energy_Dep\"\n" << \
                      "set output \"fig_ChargeDep.png\"\n" << \
                      "set key samplen 2 spacing 0.9 font \",8\" below\n" << \
-                     "set title \"Charge Transfer by Millimeter\"\n" << \
+                     "set title \"Net Charge per " << energy_string << "\n" << \
                      "set xlabel \"Position (mm)\"\n" << \
-                     "set ylabel \"Net Charge\"\n" << \
+                     "set ylabel \"dQ/dx (e/[mm * p+])\"\n" << \
+                     "set yrange [-1:1]\n" << \
                      "plot \"bins.dat\" u 1:3 t \"Net_Charge\"\n";
     gnuFileStream.close();
 
     // Run gnuplot script to create graphs as PNGs
     G4cout << "Populating gnuplot graph..." << G4endl;
     std::ostringstream runGnuStream;
-    runGnuStream << "cd " << data_dir << data_dir_geo << Al_side << "/" << data_dir_energy << E_Num << "; gnuplot graphs.gplot; cd ../../..";
+    runGnuStream << "cd " << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "; gnuplot graphs.gplot; cd ../../..";
     G4String runGnu = runGnuStream.str();
     system(runGnu);
   }
