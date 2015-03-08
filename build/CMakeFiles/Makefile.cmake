@@ -13,6 +13,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/CMakeSystem.cmake"
   "../src/CMakeLists.txt"
   "../src/debugrun.mac"
+  "../src/graphs.gplot"
   "../src/gui.mac"
   "../src/icons.mac"
   "../src/init.mac"

@@ -156,6 +156,21 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   // If fourth run (not ID==4, but the fourth being completed)
   if ( threadString == totalThreadsString ) {
   
+    // Energies for label
+    G4int E_Int = (E_Num % 5); if ( E_Int == 0 ) { E_Int = 5; }
+    std::ostringstream energy_stringStream;
+    energy_stringStream << E_Int;
+    if ( (( E_Num % 15 ) > 5) || (( E_Num % 15) == 0) ) { energy_stringStream << "0"; }
+    if ( (( E_Num % 15 ) > 10) || (( E_Num % 15) == 0) ) { energy_stringStream << "0"; }
+    G4String energy_valString = energy_stringStream.str();
+    G4int energy_val = atoi(energy_valString);
+    if ( ( 15 < E_Num ) && ( E_Num < 31 ) ) { energy_stringStream << " k"; energy_val = energy_val*1000; }
+    if ( ( E_Num > 30 ) && ( E_Num < 46) ) { energy_stringStream << " M"; energy_val = energy_val*1000000; }
+    energy_stringStream << "eV";
+    if ( data_dir_particle == "p" ) { energy_stringStream << " Protons"; }
+    if ( data_dir_particle == "n" ) { energy_stringStream << " Neutrons"; }
+    G4String energy_string = energy_stringStream.str();
+    
     // 1 Energy Deposition
     // Continuously append to energy bins
     while ( getline(energyFile, fileVarGet, ' ') ) {
@@ -192,9 +207,9 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/bins.dat";
     fileName = fileNameStream.str();
     fileStream.open (fileName, std::ios::app);
-    fileStream << "#  z (mm)   Energy_Dep  Net_Charge\n";
+    fileStream << "# Energy z_(mm) Energy_Dep Net_Charge\n";
     for ( G4int binNum = 0; binNum<numBins; binNum++ ) {
-      fileStream << binNum << " " << energy_bins[binNum]/numEvents << " " << charge_bins[binNum]/numEvents << "\n";
+      fileStream << energy_val << " " << binNum << " " << energy_bins[binNum]/numEvents << " " << charge_bins[binNum]/numEvents << "\n";
     }
     fileStream.close();
     // Summarize normalized results for production probabilities
@@ -221,19 +236,6 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     gnuFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/graphs.gplot";
     gnuFileName = gnuFileNameStream.str();
 
-    // Energies for label
-    G4int E_Int = (E_Num % 5); if ( E_Int == 0 ) { E_Int = 5; }
-    std::ostringstream energy_stringStream;
-    energy_stringStream << E_Int;
-    if ( (( E_Num % 15 ) > 5) || (( E_Num % 15) == 0) ) { energy_stringStream << "0"; }
-    if ( (( E_Num % 15 ) > 10) || (( E_Num % 15) == 0) ) { energy_stringStream << "0"; }
-    if ( ( 15 < E_Num ) && ( E_Num < 31 ) ) { energy_stringStream << " k"; }
-    if ( ( E_Num > 30 ) && ( E_Num < 46) ) { energy_stringStream << " M"; }
-    energy_stringStream << "eV";
-    if ( data_dir_particle == "p" ) { energy_stringStream << " Protons"; }
-    if ( data_dir_particle == "n" ) { energy_stringStream << " Neutrons"; }
-    G4String energy_string = energy_stringStream.str();
-    
     // Add content
     gnuFileStream.open (gnuFileName);
     gnuFileStream << "set term png\n" << \
@@ -242,14 +244,14 @@ void RunAction::EndOfRunAction(const G4Run* run) {
                      "set title \"Net Energy Deposition per " << energy_string << "\n" << \
                      "set xlabel \"Position (mm)\"\n" << \
                      "set ylabel \"Energy (eV/" << data_dir_particle << ")\"\n" << \
-                     "plot \"bins.dat\" u 1:2 t \"Energy_Dep\"\n" << \
+                     "plot \"bins.dat\" u 2:3 t \"Energy_Dep\"\n" << \
                      "set output \"fig_ChargeDep.png\"\n" << \
                      "set key samplen 2 spacing 0.9 font \",8\" below\n" << \
                      "set title \"Net Charge per " << energy_string << "\n" << \
                      "set xlabel \"Position (mm)\"\n" << \
                      "set ylabel \"Charge (e/" << data_dir_particle << ")\"\n" << \
                      "set yrange [-1:1]\n" << \
-                     "plot \"bins.dat\" u 1:3 t \"Net_Charge\"\n";
+                     "plot \"bins.dat\" u 2:4 t \"Net_Charge\"\n";
     gnuFileStream.close();
 
     // Run gnuplot script to create graphs as PNGs

@@ -1,10 +1,10 @@
 # Gamma Count and Particle Production Probabilities 
-# 1.25 gammas per event 
+# 1.3 gammas per event 
 # [ p \ n ] production probability matrix per event 
-0.84 0.01 0 0 0 0 0 
+0.9 0 0 0 0 0 0 
 0 0 0 0 0 0 0 
-0.01 0.02 0.01 0 0 0 0 
-0 0 0.02 0.03 0 0 0 
-0.02 0 0 0.01 0 0.01 0 
-0 0 0 0.01 0 0 0 
-0 0 0 0 0 0 0.01 
+0 0 0.1 0 0 0 0 
+0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 

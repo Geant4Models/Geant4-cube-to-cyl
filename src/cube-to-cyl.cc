@@ -184,6 +184,10 @@ int main(int argc,char** argv) {
       UImanager->ApplyCommand(command+macro);
     }
     
+    // Plot all figures
+    G4String runGnuplot = "gnuplot graphs.gplot";
+    system(runGnuplot);
+
     // Remove state flag
     G4String runRm = "rm " + data_dir + ".state";
     system(runRm);

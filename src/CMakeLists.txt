@@ -53,6 +53,7 @@ set(cube-to-cyl_SCRIPTS
   run100.mac
   run1000.mac
   vis.mac
+  graphs.gplot
   )
 
 foreach(_script ${cube-to-cyl_SCRIPTS})

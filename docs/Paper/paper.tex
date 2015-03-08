@@ -1,5 +1,5 @@
 \documentclass[11pt]{article}
-\title{Geant4 Benchmark Analysis: Al cube and He cylindrical chamber}
+\title{Geant4 Benchmark Analysis:\\ Al cube and He cylindrical chamber}
 \author{Shaun Marshall}
 \date{\today}
 \usepackage{abstract}
@@ -22,22 +22,27 @@
 \maketitle
 
 \begin{abstract}\emph{
-This experiment analyzes a setup of interest, firing collimated protons and neutrons in the range of $10^0-5\cdot10^8\ eV$ at an aluminum box 50 cm away of side 5, 10, and 25 cm, 50 cm, in front of a cylindrical container of helium 50 cm further.  The analytical tasks with which to assess and characterize the scenario include an energy deposition map, charge displacemnent map, and particle creation probabilities tables.  Results are comparable to empirical studies of proton dosimetry and demonstrate validity of Geant4 theoretical modeling.
+This experiment analyzes a setup of interest, firing collimated protons and neutrons in the range of $10^0-5\cdot10^8\ eV$ at an aluminum box 50 cm away of side 5, 10, and 25 cm, 50 cm, in front of a cylindrical container of helium 50 cm further.  The encoded tasks which assess and characterize the scenario include an energy deposition map, charge displacemnent map, and particle creation probabilities tables.  Results are comparable to empirical studies of proton dosimetry and demonstrate validity of Geant4 theoretical modeling.
 }\end{abstract}
 
 \begin{multicols}{2}
 
 \section{Introduction}
 
+Geant4 is a Monte Carlo simulation software written in C++, used by many leading research institutions of nuclear and particle physics\cite{?}.  Components of definition, runtime and analysis are compiled separately as classes located in header files; such generalized object-variables are well-suited for precise and fully customizable geometric and analytical specifications.
+
 \section{Procedure}
 
 1 million simulated events of collimated protons and neutrons were fired 50 cm to an Aluminum block in a vacuous world, which lie 50 cm in front of a cylindrical He gas chamber centered in line with the block vertically, perpendicular to the cylinder's long axis (fig~\ref{fig:schematic}).  This geometry was iterated for the 5, 10 and 25 cm side lengths of the block.  Energy deposition and net charge transfer by millimeter were recorded and normalized per primary.  Proton and neutron production combinations are found in time with gamma ray creation.
 
+\vspace{0.25 cm}
 \begin{figurehere}
 \centering
 \resizebox{\columnwidth}{!}{\includegraphics{../testrun.png}}
-\caption{\label{fig:schematic}\small \emph{Schematic of constructed detector geometry with sample event, using Geant4 OpenGL visualization.}}
+\caption{\small \emph{Schematic of constructed detector geometry with sample event, using Geant4 OpenGL visualization.}}
+\label{fig:schematic}
 \end{figurehere}
+\vspace{0.25 cm}
 
 The FTFP\_BERT physics list was utilized\cite{Geant4:physicsList}, with track cuts at a 10 micron minimum step legnth.  Primary particle energies range from $1$ to $5\cdot10^x$, where $x:\mathcal{Z}\in[0,8]$.
 
@@ -51,7 +56,7 @@ The charge deposition map for the proton and neutron events also utilized a User
 
 \subsection{Particle Production Tracking}
 
-Probably particle production matrices $P(n,m)$ were constructed by probing each G4Step which marked the end of a secondary particle's track for the particle name.  Gamma rays (indicitive of secondary electron production), as well as $n\times m$ combinations of secondary protons and neutrons for $n,m:\mathcal{Z}\in[1,5], \lq 5+'$ were tallied per event.  Each G4Run ended with an averaging of the productions combinations by event per energy and geometry, normalizing the result such that $\sum_n \sum_m P(n,m) = 1$.
+Probably particle production matrices $P(n,m)$ were constructed by probing each G4Step which marked the end of a secondary particle's track for the particle name.  Gamma rays (indicitive of secondary electron production), as well as $n\times m$ combinations of secondary protons and neutrons for $n,m:\mathcal{Z}\in[1,5], \lq 5+$' were tallied per event.  Each G4Run ended by averaging the productions combinations by event per energy and geometry, normalizing the result such that $\sum_n \sum_m P(n,m) = 1$.
 
 \section{Discussion}
 
