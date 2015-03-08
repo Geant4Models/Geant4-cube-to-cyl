@@ -64,6 +64,28 @@ int main(int argc,char** argv) {
   G4MTRunManager * runManager = new G4MTRunManager;
   if ( nThreads > 0 ) { 
     runManager->SetNumberOfThreads(nThreads);
+
+    // Make base dir
+    std::ostringstream dirCommandStream;
+    G4String data_dir = "data/";
+    dirCommandStream << "mkdir -p " << data_dir;
+    G4String dirCommand = dirCommandStream.str();
+    system(dirCommand);
+
+    // Create data/.threads to relay nThreads info
+    // I/O vars
+    std::ostringstream fileNameStream;
+    std::ofstream fileStream;
+    G4String fileName;
+
+    // Open and add nThreads
+    fileNameStream.str(""); fileName = "";
+    fileNameStream << data_dir << ".threads";
+    fileName = fileNameStream.str();
+    std::ofstream threadFile;
+    threadFile.open(fileName);
+    threadFile << nThreads;
+    threadFile.close();
   }  
 #else
   G4RunManager * runManager = new G4RunManager;

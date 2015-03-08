@@ -82,8 +82,8 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   G4String data_dir_energy = "E";
   G4String data_dir_analysis = "Analysis";
   
-  // Acqiure state vars
-  G4int Al_side;
+  // Acqiure state and thread vars
+  G4int Al_side, nThreads;
   fileNameStream.str(""); fileName = "";
   fileNameStream << data_dir << ".state";
   fileName = fileNameStream.str();
@@ -91,6 +91,15 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   stateFile.open(fileName);
   stateFile >> fileVarGet;
   Al_side = atoi(fileVarGet);
+  stateFile.close();
+  fileNameStream.str(""); fileVarGet = ""; fileName = "";
+  fileNameStream << data_dir << ".threads";
+  fileName = fileNameStream.str();
+  std::ifstream threadFile;
+  threadFile.open(fileName);
+  threadFile >> fileVarGet;
+  nThreads = atoi(fileVarGet);
+  threadFile.close();
     
   // Primary energy (run) number and total events
   G4int E_Num = run->GetRunID();
@@ -103,7 +112,7 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   // Invoke stat vars  
   G4int zBin, numBins = 1150;
   G4double numProtons = 0, numNeutrons = 0, numGammas = 0;
-  G4double matrixProtonsNeutrons[7][7] = {0};
+  G4double matrixProtonsNeutrons[7][7] = {{0}};
   G4double energy_bins[1150] = {0};
   G4double charge_bins[1150] = {0};
   G4double particleEDep, particleCharge;
@@ -123,11 +132,29 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   std::ifstream tallyFile;
   tallyFile.open(tallyFileName);
 
-  // Final thread: any thread can finish first, so check for numEvents lines of tally
-  G4int number_of_lines = 0;
-  std::ifstream tallyLineTest(tallyFileName);
-  while ( std::getline(tallyLineTest, fileVarGet) ) number_of_lines++;
-  if ( number_of_lines == numEvents ) {
+  // Final thread: any thread can finish first, so check run state file for nThreads of '#'
+  // Add '#' per run
+  G4String threadString, numThreadsString = "";
+  fileNameStream.str(""); fileName = "";
+  fileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/.threads";
+  fileName = fileNameStream.str();
+  std::ofstream threadNumFile;
+  threadNumFile.open(fileName, std::ios::app);
+  threadNumFile << "#";
+  threadNumFile.close();
+  // Reopen, get total length
+  std::ifstream threadsFile;
+  threadsFile.open(fileName);
+  threadsFile >> threadString;
+  threadsFile.close();
+
+  // Acquire nThreads string of '#'s
+  std::ostringstream numThreadsStream;
+  for (G4int numThreads_i=1; numThreads_i <= nThreads; numThreads_i++) { numThreadsStream << "#"; }
+  G4String totalThreadsString = numThreadsStream.str();
+
+  // If fourth run (not ID==4, but the fourth being completed)
+  if ( threadString == totalThreadsString ) {
   
     // 1 Energy Deposition
     // Continuously append to energy bins
