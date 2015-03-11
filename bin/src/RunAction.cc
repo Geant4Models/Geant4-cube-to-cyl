@@ -135,7 +135,7 @@ void RunAction::EndOfRunAction(const G4Run* run) {
 
   // Acquire nThreads string of '#'s
   std::ostringstream numThreadsStream;
-  for (G4int numThreads_i=1; numThreads_i < nThreads; numThreads_i++) { numThreadsStream << "#"; }
+  for (G4int numThreads_i=0; numThreads_i < nThreads; numThreads_i++) { numThreadsStream << "#"; }
   G4String totalThreadsString = numThreadsStream.str();
 
   // If fourth run (not ID==4, but the fourth being completed [future work: thread merge class via G4MTRunManager])
@@ -162,8 +162,8 @@ void RunAction::EndOfRunAction(const G4Run* run) {
         // Iteratively reconstruct energy/charge_bins, ignoring energy_val
         while ( getline(binsInFileStream, fileVarGet, ' ') ) {
           getline(binsInFileStream, fileVarGet, ' '); zBin = atoi(fileVarGet);
-          getline(binsInFileStream, fileVarGet, ' '); energy_bins[zBin] = atof(fileVarGet);
-          getline(binsInFileStream, fileVarGet); charge_bins[zBin] = atof(fileVarGet);
+          getline(binsInFileStream, fileVarGet, ' '); energy_bins[zBin] += atof(fileVarGet);
+          getline(binsInFileStream, fileVarGet); charge_bins[zBin] += atof(fileVarGet);
         }
         binsInFileStream.close();
       }
@@ -173,32 +173,28 @@ void RunAction::EndOfRunAction(const G4Run* run) {
       productionFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_events << "/production" << eventNum_i << ".dat";
       productionFileName = productionFileNameStream.str();
       productionInFileStream.open(productionFileName);
-      if ( productionInFileStream.good() ) {
-        // Acquire Gamma count, ignore header (1st, rest of 2nd, 3rd)
-        getline(productionInFileStream, fileVarGet);
-        getline(productionInFileStream, fileVarGet, ' ');
-        getline(productionInFileStream, fileVarGet, ' ');
-        numGammas = atof(fileVarGet);
-        getline(productionInFileStream, fileVarGet);
-        getline(productionInFileStream, fileVarGet);
+      
+      // Acquire Gamma count, ignore header (1st, rest of 2nd, 3rd)
+      getline(productionInFileStream, fileVarGet);
+      getline(productionInFileStream, fileVarGet, ' ');
+      getline(productionInFileStream, fileVarGet, ' ');
+      numGammas += atof(fileVarGet);
+      getline(productionInFileStream, fileVarGet);
+      getline(productionInFileStream, fileVarGet);
 
-        // Iteratively reconstruct matrixProtonsNeutrons
-        for ( G4int protonInt = 0; protonInt<6; protonInt++ ) {
-          for ( G4int neutronInt = 0; neutronInt<6; neutronInt++ ) {
-            getline(productionInFileStream, fileVarGet, ' ');
-            matrixProtonsNeutrons[protonInt][neutronInt] = atof(fileVarGet);
-          }
-          // final value in line uses no delimeter
-          getline(productionInFileStream, fileVarGet);
-          matrixProtonsNeutrons[protonInt][6] = atof(fileVarGet);
+      // Iteratively reconstruct matrixProtonsNeutrons
+      for ( G4int protonInt = 0; protonInt<7; protonInt++ ) {
+        for ( G4int neutronInt = 0; neutronInt<7; neutronInt++ ) {
+          getline(productionInFileStream, fileVarGet, ' ');
+          matrixProtonsNeutrons[protonInt][neutronInt] += atof(fileVarGet);
         }
-        productionInFileStream.close();
       }
+      productionInFileStream.close();
     }
-    // Remove event files
+    // Remove Event files per run
     runRmStream << "rm " << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_events << "/*";
     runRm = runRmStream.str(); system(runRm);
-
+    
     // Energies for label [future work: generalize arbitrary energy list]
     G4int E_Int = (E_Num % 5); if ( E_Int == 0 ) { E_Int = 5; }
     std::ostringstream energy_stringStream;
@@ -221,7 +217,7 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     binsOutFileStream.open (binsFileName);
     binsOutFileStream << "# Energy z_(mm) Energy_Dep Net_Charge\n";
     for ( G4int binNum = 0; binNum<numBins; binNum++ ) {
-      binsOutFileStream << energy_val << " " << binNum << " " << energy_bins[binNum] << " " << charge_bins[binNum] << "\n";
+      binsOutFileStream << energy_val << " " << binNum << " " << energy_bins[binNum]/numEvents << " " << charge_bins[binNum]/numEvents << "\n";
     }
     binsOutFileStream.close();
 
@@ -272,5 +268,9 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     runGnuStream << "cd " << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "; gnuplot graphs.gplot; cd ../../..";
     G4String runGnu = runGnuStream.str();
     system(runGnu);
+
+    // Remove event files
+    //runRmStream << "rm " << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_events << "/*";
+    //runRm = runRmStream.str(); system(runRm);
   }
 }
