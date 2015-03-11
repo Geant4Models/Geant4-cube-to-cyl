@@ -53,53 +53,53 @@ CMAKE_SOURCE_DIR = /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl
 CMAKE_BINARY_DIR = /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build
 
 #=============================================================================
-# Directory level rules for directory src
+# Directory level rules for directory bin
 
 # Convenience name for "all" pass in the directory.
-src/all: src/CMakeFiles/cube-to-cyl.dir/all
-.PHONY : src/all
+bin/all: bin/CMakeFiles/cube-to-cyl.dir/all
+.PHONY : bin/all
 
 # Convenience name for "clean" pass in the directory.
-src/clean: src/CMakeFiles/cube-to-cyl.dir/clean
-.PHONY : src/clean
+bin/clean: bin/CMakeFiles/cube-to-cyl.dir/clean
+.PHONY : bin/clean
 
 # Convenience name for "preinstall" pass in the directory.
-src/preinstall:
-.PHONY : src/preinstall
+bin/preinstall:
+.PHONY : bin/preinstall
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/cube-to-cyl.dir
+# Target rules for target bin/CMakeFiles/cube-to-cyl.dir
 
 # All Build rule for target.
-src/CMakeFiles/cube-to-cyl.dir/all:
-	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/depend
-	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/build
+bin/CMakeFiles/cube-to-cyl.dir/all:
+	$(MAKE) -f bin/CMakeFiles/cube-to-cyl.dir/build.make bin/CMakeFiles/cube-to-cyl.dir/depend
+	$(MAKE) -f bin/CMakeFiles/cube-to-cyl.dir/build.make bin/CMakeFiles/cube-to-cyl.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles  1 2 3 4 5 6 7
 	@echo "Built target cube-to-cyl"
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/all
+.PHONY : bin/CMakeFiles/cube-to-cyl.dir/all
 
 # Include target in all.
-all: src/CMakeFiles/cube-to-cyl.dir/all
+all: bin/CMakeFiles/cube-to-cyl.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/cube-to-cyl.dir/rule: cmake_check_build_system
+bin/CMakeFiles/cube-to-cyl.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/cube-to-cyl.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 bin/CMakeFiles/cube-to-cyl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/rule
+.PHONY : bin/CMakeFiles/cube-to-cyl.dir/rule
 
 # Convenience name for target.
-cube-to-cyl: src/CMakeFiles/cube-to-cyl.dir/rule
+cube-to-cyl: bin/CMakeFiles/cube-to-cyl.dir/rule
 .PHONY : cube-to-cyl
 
 # clean rule for target.
-src/CMakeFiles/cube-to-cyl.dir/clean:
-	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/clean
-.PHONY : src/CMakeFiles/cube-to-cyl.dir/clean
+bin/CMakeFiles/cube-to-cyl.dir/clean:
+	$(MAKE) -f bin/CMakeFiles/cube-to-cyl.dir/build.make bin/CMakeFiles/cube-to-cyl.dir/clean
+.PHONY : bin/CMakeFiles/cube-to-cyl.dir/clean
 
 # clean rule for target.
-clean: src/CMakeFiles/cube-to-cyl.dir/clean
+clean: bin/CMakeFiles/cube-to-cyl.dir/clean
 .PHONY : clean
 
 #=============================================================================

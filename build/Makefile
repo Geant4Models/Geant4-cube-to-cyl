@@ -149,7 +149,7 @@ cube-to-cyl: cmake_check_build_system
 
 # fast build rule for target.
 cube-to-cyl/fast:
-	$(MAKE) -f src/CMakeFiles/cube-to-cyl.dir/build.make src/CMakeFiles/cube-to-cyl.dir/build
+	$(MAKE) -f bin/CMakeFiles/cube-to-cyl.dir/build.make bin/CMakeFiles/cube-to-cyl.dir/build
 .PHONY : cube-to-cyl/fast
 
 # Help Target

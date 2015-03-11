@@ -15,10 +15,10 @@
 ########################
 
 //Value Computed by CMake
-BIN_BINARY_DIR:STATIC=/home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/src
+BIN_BINARY_DIR:STATIC=/home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/build/bin
 
 //Value Computed by CMake
-BIN_SOURCE_DIR:STATIC=/home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/src
+BIN_SOURCE_DIR:STATIC=/home/sigma/Git/Geant4Models/Geant4-cube-to-cyl/bin
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar

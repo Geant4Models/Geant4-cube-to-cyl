@@ -8,22 +8,22 @@ SET(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
+  "../bin/CMakeLists.txt"
+  "../bin/debugrun.mac"
+  "../bin/graphs.gplot"
+  "../bin/gui.mac"
+  "../bin/icons.mac"
+  "../bin/init.mac"
+  "../bin/init_vis.mac"
+  "../bin/run.in"
+  "../bin/run.png"
+  "../bin/run10.mac"
+  "../bin/run100.mac"
+  "../bin/run1000.mac"
+  "../bin/vis.mac"
   "CMakeFiles/CMakeCCompiler.cmake"
   "CMakeFiles/CMakeCXXCompiler.cmake"
   "CMakeFiles/CMakeSystem.cmake"
-  "../src/CMakeLists.txt"
-  "../src/debugrun.mac"
-  "../src/graphs.gplot"
-  "../src/gui.mac"
-  "../src/icons.mac"
-  "../src/init.mac"
-  "../src/init_vis.mac"
-  "../src/run.in"
-  "../src/run.png"
-  "../src/run10.mac"
-  "../src/run100.mac"
-  "../src/run1000.mac"
-  "../src/vis.mac"
   "/usr/local/geant4/install/lib/Geant4-10.1.0/Geant4Config.cmake"
   "/usr/local/geant4/install/lib/Geant4-10.1.0/Geant4ConfigVersion.cmake"
   "/usr/local/geant4/install/lib/Geant4-10.1.0/Geant4LibraryDepends-release.cmake"
@@ -70,10 +70,10 @@ SET(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 SET(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "bin/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
-  "src/CMakeFiles/cube-to-cyl.dir/DependInfo.cmake"
+  "bin/CMakeFiles/cube-to-cyl.dir/DependInfo.cmake"
   )
