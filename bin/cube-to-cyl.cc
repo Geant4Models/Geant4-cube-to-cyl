@@ -144,7 +144,7 @@ int main(int argc,char** argv) {
     // Geometry dir iteration
     for (G4int al_num=0; al_num<3; al_num++) {
       dirCommandStream.str(""); dirCommand = "";
-      dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/";
+      dirCommandStream << "mkdir -p " << data_dir << data_dir_geo << Al_side[al_num] << "/ " << data_dir_figs << data_dir_geo << Al_side[al_num] << "/";
       dirCommand = dirCommandStream.str();
       system(dirCommand);
       
