@@ -202,7 +202,7 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     if ( (( E_Num % 15 ) > 5) || (( E_Num % 15) == 0) ) { energy_stringStream << "0"; }
     if ( (( E_Num % 15 ) > 10) || (( E_Num % 15) == 0) ) { energy_stringStream << "0"; }
     G4String energy_valString = energy_stringStream.str();
-    G4int energy_val = atoi(energy_valString);
+    G4double energy_val = atof(energy_valString);
     if ( ( 15 < E_Num ) && ( E_Num < 31 ) ) { energy_stringStream << " k"; energy_val = energy_val*1000; }
     if ( ( E_Num > 30 ) && ( E_Num < 46) ) { energy_stringStream << " M"; energy_val = energy_val*1000000; }
     energy_stringStream << "eV";

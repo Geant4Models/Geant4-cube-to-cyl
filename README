@@ -1,0 +1,89 @@
+=========================================================
+Geant4 - an Object-Oriented Toolkit for Simulation in HEP
+=========================================================
+
+Table of Contents:
+1- HOW TO BUILD/RUN
+2- VISUALIZATION
+3- USER INTERFACES
+4- LICENSE AGREEMENT
+
+
+1- HOW TO BUILD/RUN
+ 
+Generate a Makefile, then compile the project into an executable
+  % mkdir build
+  % cd build
+  % cmake -DGeant4_DIR=$G4COMP ..
+  % make
+  % cd bin
+   
+The program can be run with the following optional arguments:
+  % ./cube-to-cyl [-m run.in ] [-u UIsession] [-t nThreads]
+   
+The -t option is available only in multi-threading mode and it allows the user to override the Geant4 default number of threads. The number of threads can be also set via G4FORCENUMBEROFTHREADS environment variable which has the top priority.
+ 
+- Execute cube-to-cyl in the 'interactive mode' with visualization
+  % ./cube-to-cyl
+and type in the commands from run.mac line by line:  
+  Idle> /tracking/verbose 1 
+  Idle> /run/beamOn 1
+  Idle> ...
+  Idle> exit
+  or
+  Idle> /control/execute run.mac
+  ....
+  Idle> exit
+- Execute cube-to-cyl in the 'batch' mode from macro files (without visualization)
+  % ./cube-to-cyl -m run2.mac
+  % ./cube-to-cyl -m run.mac > cube-to-cyl.out
+- Execute cube-to-cyl in the 'interactive mode' with a selected UI session, e.g. tcsh
+  % ./cube-to-cyl -u tcsh 
+
+
+2- VISUALIZATION
+
+The visualization manager is set via the G4VisExecutive class in the main() function in cube-to-cyl.cc. The initialisation of the drawing is done via a set of /vis/ commands in the macro vis.mac. This macro is automatically read from the main function when the example is used in interactive running mode.
+
+By default, vis.mac opens an OpenGL viewer (/vis/open OGL). The user can change the initial viewer by commenting out this line and instead uncommenting one of the other /vis/open statements, such as HepRepFile or DAWNFILE (which produce files that can be viewed with the HepRApp and DAWN viewers, respectively).  Note that one can always open new viewers at any time from the command line.  For example, if you already have a view in, say, an OpenGL window with a name "viewer-0", then
+  /vis/open DAWNFILE
+then to get the same view
+  /vis/viewer/copyView viewer-0
+or to get the same view *plus* scene-modifications
+  /vis/viewer/set/all viewer-0
+then to see the result
+  /vis/viewer/flush
+
+The DAWNFILE, HepRepFile drivers are always available (since they require no external libraries), but the OGL driver requires that the Geant4 libraries have been built with the OpenGL option.
+
+For more information on visualization, including information on how to
+install and run DAWN, OpenGL and HepRApp, see the visualization tutorials,
+for example,
+http://geant4.slac.stanford.edu/Presentations/vis/G4[VIS]Tutorial/G4[VIS]Tutorial.html
+(where [VIS] can be replaced by DAWN, OpenGL and HepRApp)
+
+The tracks are automatically drawn at the end of each event, accumulated for all events and erased at the beginning of the next run.
+
+
+3- USER INTERFACES
+
+The user command interface is set via the G4UIExecutive class in the main() function in cube-to-cyl.cc. The selection of the user command interface is then done automatically according to the Geant4 configuration or it can be done explicitly via the third argument of the G4UIExecutive constructor (see cube-to-cyl.cc).
+
+
+4- LICENSE AGREEMENT
+
+Copyright (C) 2015  Shaun Marshall
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.

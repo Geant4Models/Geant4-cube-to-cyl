@@ -2,7 +2,9 @@
 \title{Geant4 Benchmark Analysis:\\ Al cube and He cylindrical chamber}
 \author{Shaun Marshall}
 \date{\today}
+\usepackage{amsmath, amssymb}
 \usepackage{abstract}
+\usepackage{subcaption}
 \usepackage{multicol}
 \usepackage{anysize}
 \usepackage{graphicx}
@@ -29,22 +31,22 @@ This experiment analyzes a setup of interest, firing collimated protons and neut
 
 \section{Introduction}
 
-Geant4 is a Monte Carlo simulation software written in C++, used by many leading research institutions of nuclear and particle physics\cite{?}.  Components of definition, runtime and analysis are compiled separately as classes located in header files; such generalized object-variables are well-suited for precise and fully customizable geometric and analytical specifications.
+Geant4 is a Monte Carlo simulation software written in C++, used by many leading research institutions of nuclear and particle physics\cite{Geant4:applications}.  Components of definition, runtime and analysis are compiled separately as classes located in header files; such generalized object-variables are well-suited for precise and fully customizable geometric and analytical specifications.
 
-\section{Procedure}
+\section{Methodology}
 
-1 million simulated events of collimated protons and neutrons were fired 50 cm to an Aluminum block in a vacuous world, which lie 50 cm in front of a cylindrical He gas chamber centered in line with the block vertically, perpendicular to the cylinder's long axis (fig~\ref{fig:schematic}).  This geometry was iterated for the 5, 10 and 25 cm side lengths of the block.  Energy deposition and net charge transfer by millimeter were recorded and normalized per primary.  Proton and neutron production combinations are found in time with gamma ray creation.
+1 million simulated events of collimated protons and neutrons were fired 50 cm to an Aluminum block in a vacuous world, which lie 50 cm in front of a cylindrical He gas chamber (of height 50 cm and radius 15 cm) centered in line with the block vertically, perpendicular to the cylinder's long axis (fig~\ref{fig:schematic}).  This geometry was iterated for the 5, 10 and 25 cm side lengths of the block.  Energy deposition and net charge transfer by millimeter were recorded and normalized per primary.  Proton and neutron production combinations are found in time with gamma ray creation.
 
 \vspace{0.25 cm}
 \begin{figurehere}
 \centering
-\resizebox{\columnwidth}{!}{\includegraphics{../testrun.png}}
+\resizebox{\columnwidth}{!}{\includegraphics{pics/testrun.png}}
 \caption{\small \emph{Schematic of constructed detector geometry with sample event, using Geant4 OpenGL visualization.}}
 \label{fig:schematic}
 \end{figurehere}
 \vspace{0.25 cm}
 
-The FTFP\_BERT physics list was utilized\cite{Geant4:physicsList}, with track cuts at a 10 micron minimum step legnth.  Primary particle energies range from $1$ to $5\cdot10^x$, where $x:\mathcal{Z}\in[0,8]$.
+The FTFP\_BERT 2.0 physics list was activated\cite{Geant4:physicsList}, with track cuts at a 10 micron minimum step legnth.  Primary particle energies range from $1$ to $5\cdot10^x$, where $x:\mathcal{Z}\in[0,8]$.
 
 \subsection{Energy Deposition Tracking}
 
@@ -58,14 +60,69 @@ The charge deposition map for the proton and neutron events also utilized a User
 
 Probably particle production matrices $P(n,m)$ were constructed by probing each G4Step which marked the end of a secondary particle's track for the particle name.  Gamma rays (indicitive of secondary electron production), as well as $n\times m$ combinations of secondary protons and neutrons for $n,m:\mathcal{Z}\in[1,5], \lq 5+$' were tallied per event.  Each G4Run ended by averaging the productions combinations by event per energy and geometry, normalizing the result such that $\sum_n \sum_m P(n,m) = 1$.
 
-\section{Discussion}
+\section{Results}
+
+Energy deposition signatures were acquired for protons and neutrons.  Figures \ref{fig:pEDep_eV} and \ref{fig:pEDep_keV} show a monotonically increaing function of energy deposition across the experimental distance $z$ for protons in the eV to keV range.  The MeV-range (fig~\ref{fig:pEDep_MeV}) uniquely depicts a peak around 50 MeV before sharply declining throughout the next order of magnitude.  The Aluminum cube volume, which exists in the range (57.5 cm $\pm$ $L_{Al}$) where $L_{Al}=5,10,25$ cm, receives virtually all protons until MeV-range energies.  Up to 20 MeV, the total energy is deposited at $z=57.5 cm - L_{Al}$, after which the total deposition extends further in the $+z$ direction.  The last decade of energy probed exibits a dramatic increase in this extension.
+
+%% Proton EDep figures
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_pEDep_eV.png}}
+\caption{\small \emph{Energy deposition landscape (MeV) per eV-range proton}}
+\label{fig:pEDep_eV}
+\end{figurehere}
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_pEDep_keV.png}}
+\caption{\small \emph{Energy deposition landscape (MeV) per keV-range proton}}
+\label{fig:pEDep_keV}
+\end{figurehere}
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_pEDep_MeV.png}}
+\caption{\small \emph{Energy deposition landscape (MeV) per MeV-range proton}}
+\label{fig:pEDep_MeV}
+\end{figurehere}
+\vspace{0.15 cm}
+
+%% Neutron EDep figures
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_nEDep_eV.png}}
+\caption{\small \emph{Energy deposition landscape (MeV) per eV-range neutron}}
+\label{fig:nEDep_eV}
+\end{figurehere}
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_nEDep_keV.png}}
+\caption{\small \emph{Energy deposition landscape (MeV) per keV-range neutron}}
+\label{fig:nEDep_keV}
+\end{figurehere}
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_nEDep_MeV.png}}
+\caption{\small \emph{Energy deposition landscape (MeV) per MeV-range neutron}}
+\label{fig:nEDep_MeV}
+\end{figurehere}
+\vspace{0.15 cm}
+
+Neutron energy deposition maps are found in figures \ref{fig:nEDep_eV}, \ref{fig:nEDep_keV}, and \ref{fig:nEDep_MeV}, following the same energy labeling schema.  The total energy deposition here also seems to monotonically increase until MeV-range energies, at which point the deposition sputters with distance.
 
 \section{Conclusion}
 
-\section{References}
 \begin{thebibliography}{99}
 
-\bibitem[1]{Geant4:physicsList}
+\bibitem[1]{Geant4:applications}
+Geant4 Applications. \\
+\url{http://geant4.web.cern.ch/geant4/applications/index.shtml}
+
+\bibitem[2]{Geant4:physicsList}
 \lq\lq Use cases - Reference Physics Lists." \\
 Geant4 Online User Support. \\
 \url{http://www.geant4.org/geant4/support/proc_mod_catalog/physics_lists/useCases.shtml}

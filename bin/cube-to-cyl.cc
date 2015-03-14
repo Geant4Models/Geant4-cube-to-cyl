@@ -129,6 +129,7 @@ int main(int argc,char** argv) {
     G4cout << "Creating data analysis tree..." << G4endl;
     std::ostringstream dirCommandStream;
     G4String data_dir = "data/";
+    G4String data_dir_figs = "figs/";
     G4String data_dir_geo = "Al";
     G4String data_dir_particle = "p";
     G4String data_dir_energy = "E";
@@ -136,7 +137,7 @@ int main(int argc,char** argv) {
     G4String data_dir_events = "Events";
 
     // Make base dir
-    dirCommandStream << "mkdir -p " << data_dir;
+    dirCommandStream << "mkdir -p " << data_dir << " " << data_dir_figs;
     G4String dirCommand = dirCommandStream.str();
     system(dirCommand);
 

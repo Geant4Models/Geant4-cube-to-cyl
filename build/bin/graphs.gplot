@@ -1,9 +1,13 @@
 set term png
-set output "fig_pEDep.png"
+set output "figs/fig_pEDep.png"
 set title "Net Energy (MeV) Deposition per Primary Proton"
 set xlabel "Primary Energy"
 unset xtics
 set logscale x
+
+################################
+# Total data plots for protons #
+################################
 
 splot "data/Al5/pE1/bins.dat" u 1:2:3 notitle w lines, \
       "data/Al5/pE2/bins.dat" u 1:2:3 notitle w lines, \
@@ -51,11 +55,9 @@ splot "data/Al5/pE1/bins.dat" u 1:2:3 notitle w lines, \
       "data/Al5/pE44/bins.dat" u 1:2:3 notitle w lines, \
       "data/Al5/pE45/bins.dat" u 1:2:3 notitle w lines
 
-set output "fig_pChargeDep.png"
+set output "figs/fig_pChargeDep.png"
 set title "Net Charge (e) per Primary Proton"
-set xlabel "Primary Energy"
-unset xtics
-set logscale x
+unset logscale x
 
 splot "data/Al5/pE1/bins.dat" u 1:2:4 notitle w lines, \
       "data/Al5/pE2/bins.dat" u 1:2:4 notitle w lines, \
@@ -103,11 +105,139 @@ splot "data/Al5/pE1/bins.dat" u 1:2:4 notitle w lines, \
       "data/Al5/pE44/bins.dat" u 1:2:4 notitle w lines, \
       "data/Al5/pE45/bins.dat" u 1:2:4 notitle w lines
 
-set term png
-set output "fig_nEDep.png"
+
+###########################
+# Decades for proton EDep #
+###########################
+
+set output "figs/fig_pEDep_eV.png"
+set title "Net Energy (MeV) Deposition in eV Range per Primary Proton"
+set logscale x
+
+splot "data/Al5/pE1/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE2/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE3/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE4/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE5/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE6/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE7/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE8/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE9/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE10/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE11/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE12/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE13/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE14/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE15/bins.dat" u 1:2:3 notitle w lines
+
+set output "figs/fig_pEDep_keV.png"
+set title "Net Energy (MeV) Deposition in keV Range per Primary Proton"
+
+splot "data/Al5/pE16/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE17/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE18/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE19/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE20/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE21/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE22/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE23/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE24/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE25/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE26/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE27/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE28/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE29/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE30/bins.dat" u 1:2:3 notitle w lines
+
+set output "figs/fig_pEDep_MeV.png"
+set title "Net Energy (MeV) Deposition in MeV Range per Primary Proton"
+
+splot "data/Al5/pE31/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE32/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE33/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE34/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE35/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE36/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE37/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE38/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE39/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE40/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE41/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE42/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE43/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE44/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/pE45/bins.dat" u 1:2:3 notitle w lines
+
+
+################################
+# Decades for proton ChargeDep #
+################################
+
+set output "figs/fig_pChargeDep_eV.png"
+set title "Net Charge (e) per Primary Proton"
+unset logscale x
+
+splot "data/Al5/pE1/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE2/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE3/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE4/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE5/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE6/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE7/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE8/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE9/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE10/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE11/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE12/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE13/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE14/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE15/bins.dat" u 1:2:4 notitle w lines
+
+set output "figs/fig_pChargeDep_keV.png"
+set title "Net Charge (e) per Primary Proton"
+
+splot "data/Al5/pE16/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE17/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE18/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE19/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE20/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE21/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE22/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE23/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE24/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE25/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE26/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE27/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE28/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE29/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE30/bins.dat" u 1:2:4 notitle w lines
+
+set output "figs/fig_pChargeDep_MeV.png"
+set title "Net Charge (e) per Primary Proton"
+
+splot "data/Al5/pE31/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE32/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE33/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE34/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE35/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE36/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE37/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE38/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE39/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE40/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE41/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE42/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE43/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE44/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/pE45/bins.dat" u 1:2:4 notitle w lines
+
+
+#################################
+# Total data plots for neutrons #
+#################################
+
+set output "figs/fig_nEDep.png"
 set title "Net Energy (MeV) Deposition per Primary Neutron"
-set xlabel "Primary Energy"
-unset xtics
 set logscale x
 
 splot "data/Al5/nE1/bins.dat" u 1:2:3 notitle w lines, \
@@ -156,11 +286,9 @@ splot "data/Al5/nE1/bins.dat" u 1:2:3 notitle w lines, \
       "data/Al5/nE44/bins.dat" u 1:2:3 notitle w lines, \
       "data/Al5/nE45/bins.dat" u 1:2:3 notitle w lines
 
-set output "fig_nChargeDep.png"
+set output "figs/fig_nChargeDep.png"
 set title "Net Charge (e) per Primary Neutron"
-set xlabel "Primary Energy"
-unset xtics
-set logscale x
+unset logscale x
 
 splot "data/Al5/nE1/bins.dat" u 1:2:4 notitle w lines, \
       "data/Al5/nE2/bins.dat" u 1:2:4 notitle w lines, \
@@ -193,6 +321,132 @@ splot "data/Al5/nE1/bins.dat" u 1:2:4 notitle w lines, \
       "data/Al5/nE29/bins.dat" u 1:2:4 notitle w lines, \
       "data/Al5/nE30/bins.dat" u 1:2:4 notitle w lines, \
       "data/Al5/nE31/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE32/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE33/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE34/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE35/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE36/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE37/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE38/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE39/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE40/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE41/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE42/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE43/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE44/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE45/bins.dat" u 1:2:4 notitle w lines
+
+
+############################
+# Decades for neutron EDep #
+############################
+
+set output "figs/fig_nEDep_eV.png"
+set title "Net Energy (MeV) Deposition in eV Range per Primary Neutron"
+set logscale x
+
+splot "data/Al5/nE1/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE2/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE3/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE4/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE5/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE6/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE7/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE8/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE9/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE10/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE11/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE12/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE13/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE14/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE15/bins.dat" u 1:2:3 notitle w lines
+
+set output "figs/fig_nEDep_keV.png"
+set title "Net Energy (MeV) Deposition in keV Range per Primary Neutron"
+
+splot "data/Al5/nE16/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE17/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE18/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE19/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE20/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE21/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE22/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE23/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE24/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE25/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE26/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE27/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE28/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE29/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE30/bins.dat" u 1:2:3 notitle w lines
+
+set output "figs/fig_nEDep_MeV.png"
+set title "Net Energy (MeV) Deposition in MeV Range per Primary Neutron"
+
+splot "data/Al5/nE31/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE32/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE33/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE34/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE35/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE36/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE37/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE38/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE39/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE40/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE41/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE42/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE43/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE44/bins.dat" u 1:2:3 notitle w lines, \
+      "data/Al5/nE45/bins.dat" u 1:2:3 notitle w lines
+
+
+#################################
+# Decades for neutron ChargeDep #
+#################################
+
+set output "figs/fig_nChargeDep_eV.png"
+set title "Net Charge (e) per Primary Neutron"
+unset logscale x
+
+splot "data/Al5/nE1/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE2/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE3/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE4/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE5/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE6/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE7/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE8/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE9/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE10/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE11/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE12/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE13/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE14/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE15/bins.dat" u 1:2:4 notitle w lines
+
+set output "figs/fig_nChargeDep_keV.png"
+set title "Net Charge (e) per Primary Neutron"
+
+splot "data/Al5/nE16/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE17/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE18/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE19/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE20/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE21/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE22/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE23/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE24/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE25/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE26/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE27/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE28/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE29/bins.dat" u 1:2:4 notitle w lines, \
+      "data/Al5/nE30/bins.dat" u 1:2:4 notitle w lines
+
+set output "figs/fig_nChargeDep_MeV.png"
+set title "Net Charge (e) per Primary Neutron"
+
+splot "data/Al5/nE31/bins.dat" u 1:2:4 notitle w lines, \
       "data/Al5/nE32/bins.dat" u 1:2:4 notitle w lines, \
       "data/Al5/nE33/bins.dat" u 1:2:4 notitle w lines, \
       "data/Al5/nE34/bins.dat" u 1:2:4 notitle w lines, \

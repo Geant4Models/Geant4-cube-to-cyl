@@ -81,16 +81,16 @@
 /gun/energy 100 keV
 /run/beamOn 100
 #
-/gun/energy 200 eV
+/gun/energy 200 keV
 /run/beamOn 100
 #
-/gun/energy 300 eV
+/gun/energy 300 keV
 /run/beamOn 100
 #
-/gun/energy 400 eV
+/gun/energy 400 keV
 /run/beamOn 100
 #
-/gun/energy 500 eV
+/gun/energy 500 keV
 /run/beamOn 100
 #
 /gun/energy 1 MeV
@@ -219,16 +219,16 @@
 /gun/energy 100 keV
 /run/beamOn 100
 #
-/gun/energy 200 eV
+/gun/energy 200 keV
 /run/beamOn 100
 #
-/gun/energy 300 eV
+/gun/energy 300 keV
 /run/beamOn 100
 #
-/gun/energy 400 eV
+/gun/energy 400 keV
 /run/beamOn 100
 #
-/gun/energy 500 eV
+/gun/energy 500 keV
 /run/beamOn 100
 #
 /gun/energy 1 MeV
