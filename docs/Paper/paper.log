@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.6.5)  13 MAR 2015 21:10
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.6.5)  13 MAR 2015 23:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -328,27 +328,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
 <pics/fig_pEDep_eV.png, id=17, 642.4pt x 481.8pt>
 File: pics/fig_pEDep_eV.png Graphic file (type png)
  <use pics/fig_pEDep_eV.png>
-Package pdftex.def Info: pics/fig_pEDep_eV.png used on input line 71.
+Package pdftex.def Info: pics/fig_pEDep_eV.png used on input line 73.
 (pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
 
 <pics/fig_pEDep_keV.png, id=18, 642.4pt x 481.8pt>
 File: pics/fig_pEDep_keV.png Graphic file (type png)
 
 <use pics/fig_pEDep_keV.png>
-Package pdftex.def Info: pics/fig_pEDep_keV.png used on input line 78.
+Package pdftex.def Info: pics/fig_pEDep_keV.png used on input line 80.
 (pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
 
 <pics/fig_pEDep_MeV.png, id=19, 642.4pt x 481.8pt>
 File: pics/fig_pEDep_MeV.png Graphic file (type png)
 
 <use pics/fig_pEDep_MeV.png>
-Package pdftex.def Info: pics/fig_pEDep_MeV.png used on input line 85.
+Package pdftex.def Info: pics/fig_pEDep_MeV.png used on input line 87.
 (pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
  <pics/fig_nEDep_eV.png, id=20, 642.4pt x 481.8pt>
 File: pics/fig_nEDep_eV.png Graphic file (type png)
 
 <use pics/fig_nEDep_eV.png>
-Package pdftex.def Info: pics/fig_nEDep_eV.png used on input line 95.
+Package pdftex.def Info: pics/fig_nEDep_eV.png used on input line 97.
 (pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
  [2 <./pics/fig_pEDep_eV.png> <./pics/fig_pEDep_keV.png> <./pics/fig_pEDep_MeV.
 png>]
@@ -356,56 +356,100 @@ png>]
 File: pics/fig_nEDep_keV.png Graphic file (type png)
 
 <use pics/fig_nEDep_keV.png>
-Package pdftex.def Info: pics/fig_nEDep_keV.png used on input line 102.
+Package pdftex.def Info: pics/fig_nEDep_keV.png used on input line 104.
 (pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
 
 <pics/fig_nEDep_MeV.png, id=29, 642.4pt x 481.8pt>
 File: pics/fig_nEDep_MeV.png Graphic file (type png)
 
 <use pics/fig_nEDep_MeV.png>
-Package pdftex.def Info: pics/fig_nEDep_MeV.png used on input line 109.
+Package pdftex.def Info: pics/fig_nEDep_MeV.png used on input line 111.
 (pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--124
+<pics/fig_pChargeDep_eV.png, id=30, 642.4pt x 481.8pt>
+File: pics/fig_pChargeDep_eV.png Graphic file (type png)
+
+<use pics/fig_pChargeDep_eV.png>
+Package pdftex.def Info: pics/fig_pChargeDep_eV.png used on input line 135.
+(pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
+ [3 <./pics/fig_nEDep_eV.png> <./pics/fig_nEDep_keV.png> <./pics/fig_nEDep_MeV.
+png>]
+<pics/fig_pChargeDep_keV.png, id=37, 642.4pt x 481.8pt>
+File: pics/fig_pChargeDep_keV.png Graphic file (type png)
+
+<use pics/fig_pChargeDep_keV.png>
+Package pdftex.def Info: pics/fig_pChargeDep_keV.png used on input line 142.
+(pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
+
+<pics/fig_pChargeDep_MeV.png, id=38, 642.4pt x 481.8pt>
+File: pics/fig_pChargeDep_MeV.png Graphic file (type png)
+
+<use pics/fig_pChargeDep_MeV.png>
+Package pdftex.def Info: pics/fig_pChargeDep_MeV.png used on input line 149.
+(pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
+
+<pics/fig_nChargeDep_eV.png, id=39, 642.4pt x 481.8pt>
+File: pics/fig_nChargeDep_eV.png Graphic file (type png)
+
+<use pics/fig_nChargeDep_eV.png>
+Package pdftex.def Info: pics/fig_nChargeDep_eV.png used on input line 159.
+(pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
+
+<pics/fig_nChargeDep_keV.png, id=40, 642.4pt x 481.8pt>
+File: pics/fig_nChargeDep_keV.png Graphic file (type png)
+
+<use pics/fig_nChargeDep_keV.png>
+Package pdftex.def Info: pics/fig_nChargeDep_keV.png used on input line 166.
+(pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
+
+<pics/fig_nChargeDep_MeV.png, id=41, 642.4pt x 481.8pt>
+File: pics/fig_nChargeDep_MeV.png Graphic file (type png)
+
+<use pics/fig_nChargeDep_MeV.png>
+Package pdftex.def Info: pics/fig_nChargeDep_MeV.png used on input line 173.
+(pdftex.def)             Requested size: 642.39844pt x 481.79881pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--186
 \OT1/cmtt/m/n/10.95 http : / / geant4 . web . cern . ch / geant4 /
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--129
+[4 <./pics/fig_pChargeDep_eV.png> <./pics/fig_pChargeDep_keV.png> <./pics/fig_p
+ChargeDep_MeV.png> <./pics/fig_nChargeDep_eV.png> <./pics/fig_nChargeDep_keV.pn
+g> <./pics/fig_nChargeDep_MeV.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 188--191
 \OT1/cmtt/m/n/10.95 http : / / www . geant4 . org / geant4 / support /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--129
+Underfull \hbox (badness 10000) in paragraph at lines 188--191
 \OT1/cmtt/m/n/10.95 proc _ mod _ catalog / physics _ lists /
  []
 
-[3 <./pics/fig_nEDep_eV.png> <./pics/fig_nEDep_keV.png> <./pics/fig_nEDep_MeV.p
-ng>] (./paper.aux) ) 
+[5] [6] [7] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 3767 strings out of 495059
- 55155 string characters out of 3182031
- 110268 words of memory out of 3000000
- 6885 multiletter control sequences out of 15000+200000
- 13565 words of font info for 53 fonts, out of 3000000 for 9000
+ 3811 strings out of 495059
+ 56248 string characters out of 3182031
+ 108344 words of memory out of 3000000
+ 6921 multiletter control sequences out of 15000+200000
+ 14612 words of font info for 56 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,6n,40p,811b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmtt10.pfb>
-Output written on paper.pdf (3 pages, 194931 bytes).
+ 42i,7n,40p,890b,348s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmtt10.pfb>
+Output written on paper.pdf (7 pages, 235944 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 101 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

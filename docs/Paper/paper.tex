@@ -62,7 +62,9 @@ Probably particle production matrices $P(n,m)$ were constructed by probing each 
 
 \section{Results}
 
-Energy deposition signatures were acquired for protons and neutrons.  Figures \ref{fig:pEDep_eV} and \ref{fig:pEDep_keV} show a monotonically increaing function of energy deposition across the experimental distance $z$ for protons in the eV to keV range.  The MeV-range (fig~\ref{fig:pEDep_MeV}) uniquely depicts a peak around 50 MeV before sharply declining throughout the next order of magnitude.  The Aluminum cube volume, which exists in the range (57.5 cm $\pm$ $L_{Al}$) where $L_{Al}=5,10,25$ cm, receives virtually all protons until MeV-range energies.  Up to 20 MeV, the total energy is deposited at $z=57.5 cm - L_{Al}$, after which the total deposition extends further in the $+z$ direction.  The last decade of energy probed exibits a dramatic increase in this extension.
+\subsection{Energy Deposition}
+
+Energy deposition signatures were acquired for protons and neutrons.  Figures \ref{fig:pEDep_eV} and \ref{fig:pEDep_keV} show a monotonically increaing function of energy deposition across the experimental distance $z$ for protons in the eV to keV range.  The MeV-range (fig~\ref{fig:pEDep_MeV}) uniquely depicts a peak around 50 MeV before sharply declining throughout the next order of magnitude.  The Aluminum cube volume, which exists in the range (57.5 cm $\pm$ $L_{Al}/2$) where $L_{Al}=5,10,25$ cm, receives virtually all protons until MeV-range energies.  Up to 20 MeV, the total energy is deposited at $z=57.5 cm - L_{Al}/2$, after which the total deposition extends further in the $+z$ direction.  The last decade of energy probed exibits a dramatic increase in this extension, which increasingly exposes a gradual incline to a peak followed by a drop.
 
 %% Proton EDep figures
 \vspace{0.15 cm}
@@ -110,11 +112,76 @@ Energy deposition signatures were acquired for protons and neutrons.  Figures \r
 \caption{\small \emph{Energy deposition landscape (MeV) per MeV-range neutron}}
 \label{fig:nEDep_MeV}
 \end{figurehere}
+\vspace{0.2 cm}
+
+Neutron energy deposition maps are found in figures \ref{fig:nEDep_eV}, \ref{fig:nEDep_keV}, and \ref{fig:nEDep_MeV}, following the same energy labeling schema.  The total energy deposition here also seems to monotonically increase until MeV-range energies, at which point the deposition sputters across various locations throughout the $57.5 cm \pm L_{Al}/2$ domain in $z$.  See Appendix~\ref{app:EDep} for energy deposition figures for secondary and tertiary geometric models, omitted for behavioral redundancy.
+
+
+\subsection{Charge Deposition}
+
+The average charge displacement per proton event is acquired and normalized by the gain equation (eqn.~\ref{eqn:gain}) in order to create a charge displacement landscapes.
+\begin{equation}
+  gain[z] = \frac{\sum \text{\emph{net charge @ $z$}} }{\sum \text{\emph{charge of primary particle}} } \label{eqn:gain}
+\end{equation}
+Up to around 10 keV proton energies (figs.~\ref{fig:pChargeDep_eV} and \ref{fig:pChargeDep_keV}) the nominal gain outside of the defined volumes (hence in air) are comparable to the magnitudes found between the boundaries of the Aluminum block.  Beyond 100 MeV proton energies (fig.~\ref{fig:pChargeDep_MeV}) a gain measurement may be found within the confines of the Helium cylinder, which exists within the range $z=100 cm \pm R_{He}$; for these figures, a large peak may be seen at the world's edge, $z=115 cm$.  The $-1e$ net gain at $z=0$ for all figures is where the collimated source originates.
+
+No visible charge trasfer occurs with neutron primary events in the ev to keV energy range (figs.~\ref{fig:nChargeDep_eV} and \ref{fig:nChargeDep_keV}).  Only in MeV range beam energies (fig.~\ref{fig:nChargeDep_MeV}) do the neutron events charge transfer at the boundaries of both the Aluminum cube and Helium cylinder. See Appendix~\ref{app:ChargeDep} for charge deposition figures for secondary and tertiary geometric models, omitted for behavioral redundancy.
+
+
+%% Proton ChargeDep figures
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_pChargeDep_eV.png}}
+\caption{\small \emph{Charge displacement landscape (gain) per eV-range proton}}
+\label{fig:pChargeDep_eV}
+\end{figurehere}
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_pChargeDep_keV.png}}
+\caption{\small \emph{Charge displacement landscape (gain) per keV-range proton}}
+\label{fig:pChargeDep_keV}
+\end{figurehere}
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_pChargeDep_MeV.png}}
+\caption{\small \emph{Charge displacement landscape (gain) per MeV-range proton}}
+\label{fig:pChargeDep_MeV}
+\end{figurehere}
 \vspace{0.15 cm}
 
-Neutron energy deposition maps are found in figures \ref{fig:nEDep_eV}, \ref{fig:nEDep_keV}, and \ref{fig:nEDep_MeV}, following the same energy labeling schema.  The total energy deposition here also seems to monotonically increase until MeV-range energies, at which point the deposition sputters with distance.
+%% Neutron ChargeDep figures
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_nChargeDep_eV.png}}
+\caption{\small \emph{Charge displacement landscape (gain) per eV-range neutron}}
+\label{fig:nChargeDep_eV}
+\end{figurehere}
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_nChargeDep_keV.png}}
+\caption{\small \emph{Charge displacement landscape (gain) per keV-range neutron}}
+\label{fig:nChargeDep_keV}
+\end{figurehere}
+\vspace{0.15 cm}
+\begin{figurehere}
+\centering
+\resizebox{\columnwidth}{!}{\includegraphics{pics/fig_nChargeDep_MeV.png}}
+\caption{\small \emph{Charge displacement landscape (gain) per MeV-range neutron}}
+\label{fig:nChargeDep_MeV}
+\end{figurehere}
+\vspace{0.15 cm}
 
-\section{Conclusion}
+
+\subsection{Production Probabilities}
+
+
+
+\section{Conclusions}
 
 \begin{thebibliography}{99}
 
@@ -130,4 +197,12 @@ Geant4 Online User Support. \\
 \end{thebibliography}
 
 \end{multicols}
+
+\appendix
+\newpage
+\section{Energy deposition for Al side = 10, 25 cm}\label{app:EDep}
+
+\newpage
+\section{Charge deposition for Al side = 10, 25 cm}\label{app:ChargeDep}
+
 \end{document}

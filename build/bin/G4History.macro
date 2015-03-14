@@ -1,0 +1,691 @@
+/run/verbose 2
+/tracking/storeTrajectory 2
+/run/printProgress 100
+/gun/particle proton
+/gun/energy 1 eV
+/gun/energy 2 eV
+/gun/energy 3 eV
+/gun/energy 4 eV
+/gun/energy 5 eV
+/gun/energy 10 eV
+/gun/energy 20 eV
+/gun/energy 30 eV
+/gun/energy 40 eV
+/gun/energy 50 eV
+/gun/energy 100 eV
+/gun/energy 200 eV
+/gun/energy 300 eV
+/gun/energy 400 eV
+/gun/energy 500 eV
+/gun/energy 1 keV
+/gun/energy 2 keV
+/gun/energy 3 keV
+/gun/energy 4 keV
+/gun/energy 5 keV
+/gun/energy 10 keV
+/gun/energy 20 keV
+/gun/energy 30 keV
+/gun/energy 40 keV
+/gun/energy 50 keV
+/gun/energy 100 keV
+/gun/energy 200 keV
+/gun/energy 300 keV
+/gun/energy 400 keV
+/gun/energy 500 keV
+/gun/energy 1 MeV
+/gun/energy 2 MeV
+/gun/energy 3 MeV
+/gun/energy 4 MeV
+/gun/energy 5 MeV
+/gun/energy 10 MeV
+/gun/energy 20 MeV
+/gun/energy 30 MeV
+/gun/energy 40 MeV
+/gun/energy 50 MeV
+/gun/energy 100 MeV
+/gun/energy 200 MeV
+/gun/energy 300 MeV
+/gun/energy 400 MeV
+/gun/energy 500 MeV
+/gun/particle neutron
+/gun/energy 1 eV
+/gun/energy 2 eV
+/gun/energy 3 eV
+/gun/energy 4 eV
+/gun/energy 5 eV
+/gun/energy 10 eV
+/gun/energy 20 eV
+/gun/energy 30 eV
+/gun/energy 40 eV
+/gun/energy 50 eV
+/gun/energy 100 eV
+/gun/energy 200 eV
+/gun/energy 300 eV
+/gun/energy 400 eV
+/gun/energy 500 eV
+/gun/energy 1 keV
+/gun/energy 2 keV
+/gun/energy 3 keV
+/gun/energy 4 keV
+/gun/energy 5 keV
+/gun/energy 10 keV
+/gun/energy 20 keV
+/gun/energy 30 keV
+/gun/energy 40 keV
+/gun/energy 50 keV
+/gun/energy 100 keV
+/gun/energy 200 keV
+/gun/energy 300 keV
+/gun/energy 400 keV
+/gun/energy 500 keV
+/gun/energy 1 MeV
+/gun/energy 2 MeV
+/gun/energy 3 MeV
+/gun/energy 4 MeV
+/gun/energy 5 MeV
+/gun/energy 10 MeV
+/gun/energy 20 MeV
+/gun/energy 30 MeV
+/gun/energy 40 MeV
+/gun/energy 50 MeV
+/gun/energy 100 MeV
+/gun/energy 200 MeV
+/gun/energy 300 MeV
+/gun/energy 400 MeV
+/gun/energy 500 MeV
+/tracking/verbose 0
+/gun/particle proton
+/gun/energy 1 eV
+/gun/energy 2 eV
+/gun/energy 3 eV
+/gun/energy 4 eV
+/gun/energy 5 eV
+/gun/energy 10 eV
+/gun/energy 20 eV
+/gun/energy 30 eV
+/gun/energy 40 eV
+/gun/energy 50 eV
+/gun/energy 100 eV
+/gun/energy 200 eV
+/gun/energy 300 eV
+/gun/energy 400 eV
+/gun/energy 500 eV
+/gun/energy 1 keV
+/gun/energy 2 keV
+/gun/energy 3 keV
+/gun/energy 4 keV
+/gun/energy 5 keV
+/gun/energy 10 keV
+/gun/energy 20 keV
+/gun/energy 30 keV
+/gun/energy 40 keV
+/gun/energy 50 keV
+/gun/energy 100 keV
+/gun/energy 200 keV
+/gun/energy 300 keV
+/gun/energy 400 keV
+/gun/energy 500 keV
+/gun/energy 1 MeV
+/gun/energy 2 MeV
+/gun/energy 3 MeV
+/gun/energy 4 MeV
+/gun/energy 5 MeV
+/gun/energy 10 MeV
+/gun/energy 20 MeV
+/gun/energy 30 MeV
+/gun/energy 40 MeV
+/gun/energy 50 MeV
+/gun/energy 100 MeV
+/gun/energy 200 MeV
+/gun/energy 300 MeV
+/gun/energy 400 MeV
+/gun/energy 500 MeV
+/gun/particle neutron
+/gun/energy 1 eV
+/gun/energy 2 eV
+/gun/energy 3 eV
+/gun/energy 4 eV
+/gun/energy 5 eV
+/gun/energy 10 eV
+/gun/energy 20 eV
+/gun/energy 30 eV
+/gun/energy 40 eV
+/gun/energy 50 eV
+/gun/energy 100 eV
+/gun/energy 200 eV
+/gun/energy 300 eV
+/gun/energy 400 eV
+/gun/energy 500 eV
+/gun/energy 1 keV
+/gun/energy 2 keV
+/gun/energy 3 keV
+/gun/energy 4 keV
+/gun/energy 5 keV
+/gun/energy 10 keV
+/gun/energy 20 keV
+/gun/energy 30 keV
+/gun/energy 40 keV
+/gun/energy 50 keV
+/gun/energy 100 keV
+/gun/energy 200 keV
+/gun/energy 300 keV
+/gun/energy 400 keV
+/gun/energy 500 keV
+/gun/energy 1 MeV
+/gun/energy 2 MeV
+/gun/energy 3 MeV
+/gun/energy 4 MeV
+/gun/energy 5 MeV
+/gun/energy 10 MeV
+/gun/energy 20 MeV
+/gun/energy 30 MeV
+/gun/energy 40 MeV
+/gun/energy 50 MeV
+/gun/energy 100 MeV
+/gun/energy 200 MeV
+/gun/energy 300 MeV
+/gun/energy 400 MeV
+/gun/energy 500 MeV
+/tracking/verbose 0
+/gun/particle proton
+/gun/energy 1 eV
+/gun/energy 2 eV
+/gun/energy 3 eV
+/gun/energy 4 eV
+/gun/energy 5 eV
+/gun/energy 10 eV
+/gun/energy 20 eV
+/gun/energy 30 eV
+/gun/energy 40 eV
+/gun/energy 50 eV
+/gun/energy 100 eV
+/gun/energy 200 eV
+/gun/energy 300 eV
+/gun/energy 400 eV
+/gun/energy 500 eV
+/gun/energy 1 keV
+/gun/energy 2 keV
+/gun/energy 3 keV
+/gun/energy 4 keV
+/gun/energy 5 keV
+/gun/energy 10 keV
+/gun/energy 20 keV
+/gun/energy 30 keV
+/gun/energy 40 keV
+/gun/energy 50 keV
+/gun/energy 100 keV
+/gun/energy 200 keV
+/gun/energy 300 keV
+/gun/energy 400 keV
+/gun/energy 500 keV
+/gun/energy 1 MeV
+/gun/energy 2 MeV
+/gun/energy 3 MeV
+/gun/energy 4 MeV
+/gun/energy 5 MeV
+/gun/energy 10 MeV
+/gun/energy 20 MeV
+/gun/energy 30 MeV
+/gun/energy 40 MeV
+/gun/energy 50 MeV
+/gun/energy 100 MeV
+/gun/energy 200 MeV
+/gun/energy 300 MeV
+/gun/energy 400 MeV
+/gun/energy 500 MeV
+/gun/particle neutron
+/gun/energy 1 eV
+/gun/energy 2 eV
+/gun/energy 3 eV
+/gun/energy 4 eV
+/gun/energy 5 eV
+/gun/energy 10 eV
+/gun/energy 20 eV
+/gun/energy 30 eV
+/gun/energy 40 eV
+/gun/energy 50 eV
+/gun/energy 100 eV
+/gun/energy 200 eV
+/gun/energy 300 eV
+/gun/energy 400 eV
+/gun/energy 500 eV
+/gun/energy 1 keV
+/gun/energy 2 keV
+/gun/energy 3 keV
+/gun/energy 4 keV
+/gun/energy 5 keV
+/gun/energy 10 keV
+/gun/energy 20 keV
+/gun/energy 30 keV
+/gun/energy 40 keV
+/gun/energy 50 keV
+/gun/energy 100 keV
+/gun/energy 200 keV
+/gun/energy 300 keV
+/gun/energy 400 keV
+/gun/energy 500 keV
+/gun/energy 1 MeV
+/gun/energy 2 MeV
+/gun/energy 3 MeV
+/gun/energy 4 MeV
+/gun/energy 5 MeV
+/gun/energy 10 MeV
+/gun/energy 20 MeV
+/gun/energy 30 MeV
+/gun/energy 40 MeV
+/gun/energy 50 MeV
+/gun/energy 100 MeV
+/gun/energy 200 MeV
+/gun/energy 300 MeV
+/gun/energy 400 MeV
+/gun/energy 500 MeV
+run/beamOn 10
+/gun/energy 200 keV
+/run/beamOn 10
+/gun/energy 300 keV
+/run/beamOn 10
+/gun/energy 400 keV
+/run/beamOn 10
+/gun/energy 500 keV
+/run/beamOn 10
+/gun/energy 1 MeV
+/run/beamOn 10
+/gun/energy 2 MeV
+/run/beamOn 10
+/gun/energy 3 MeV
+/run/beamOn 10
+/gun/energy 4 MeV
+/run/beamOn 10
+/gun/energy 5 MeV
+/run/beamOn 10
+/gun/energy 10 MeV
+/run/beamOn 10
+/gun/energy 20 MeV
+/run/beamOn 10
+/gun/energy 30 MeV
+/run/beamOn 10
+/gun/energy 40 MeV
+/run/beamOn 10
+/gun/energy 50 MeV
+/run/beamOn 10
+/gun/energy 100 MeV
+/run/beamOn 10
+/gun/energy 200 MeV
+/run/beamOn 10
+/gun/energy 300 MeV
+/run/beamOn 10
+/gun/energy 400 MeV
+/run/beamOn 10
+/gun/energy 500 MeV
+/run/beamOn 10
+/tracking/verbose 0
+/vis/viewer/set/style wireframe
+/control/execute run10.mac
+/gun/particle proton
+/gun/energy 1 eV
+/run/beamOn 10
+/gun/energy 2 eV
+/run/beamOn 10
+/gun/energy 3 eV
+/run/beamOn 10
+/gun/energy 4 eV
+/run/beamOn 10
+/gun/energy 5 eV
+/run/beamOn 10
+/gun/energy 10 eV
+/run/beamOn 10
+/gun/energy 20 eV
+/run/beamOn 10
+/gun/energy 30 eV
+/run/beamOn 10
+/gun/energy 40 eV
+/run/beamOn 10
+/gun/energy 50 eV
+/run/beamOn 10
+/gun/energy 100 eV
+/run/beamOn 10
+/gun/energy 200 eV
+/run/beamOn 10
+/gun/energy 300 eV
+/run/beamOn 10
+/gun/energy 400 eV
+/run/beamOn 10
+/gun/energy 500 eV
+/run/beamOn 10
+/gun/energy 1 keV
+/run/beamOn 10
+/gun/energy 2 keV
+/run/beamOn 10
+/gun/energy 3 keV
+/run/beamOn 10
+/gun/energy 4 keV
+/run/beamOn 10
+/gun/energy 5 keV
+/run/beamOn 10
+/gun/energy 10 keV
+/run/beamOn 10
+/gun/energy 20 keV
+/run/beamOn 10
+/gun/energy 30 keV
+/run/beamOn 10
+/gun/energy 40 keV
+/run/beamOn 10
+/gun/energy 50 keV
+/run/beamOn 10
+/gun/energy 100 keV
+/run/beamOn 10
+/gun/energy 200 keV
+/run/beamOn 10
+/gun/energy 300 keV
+/run/beamOn 10
+/gun/energy 400 keV
+/run/beamOn 10
+/gun/energy 500 keV
+/run/beamOn 10
+/gun/energy 1 MeV
+/run/beamOn 10
+/gun/energy 2 MeV
+/run/beamOn 10
+/gun/energy 3 MeV
+/run/beamOn 10
+/gun/energy 4 MeV
+/run/beamOn 10
+/gun/energy 5 MeV
+/run/beamOn 10
+/gun/energy 10 MeV
+/run/beamOn 10
+/gun/energy 20 MeV
+/run/beamOn 10
+/gun/energy 30 MeV
+/run/beamOn 10
+/gun/energy 40 MeV
+/run/beamOn 10
+/gun/energy 50 MeV
+/run/beamOn 10
+/gun/energy 100 MeV
+/run/beamOn 10
+/gun/energy 200 MeV
+/run/beamOn 10
+/gun/energy 300 MeV
+/run/beamOn 10
+/gun/energy 400 MeV
+/run/beamOn 10
+/gun/energy 500 MeV
+/run/beamOn 10
+/gun/particle neutron
+/gun/energy 1 eV
+/run/beamOn 10
+/gun/energy 2 eV
+/run/beamOn 10
+/gun/energy 3 eV
+/run/beamOn 10
+/gun/energy 4 eV
+/run/beamOn 10
+/gun/energy 5 eV
+/run/beamOn 10
+/gun/energy 10 eV
+/run/beamOn 10
+/gun/energy 20 eV
+/run/beamOn 10
+/gun/energy 30 eV
+/run/beamOn 10
+/gun/energy 40 eV
+/run/beamOn 10
+/gun/energy 50 eV
+/run/beamOn 10
+/gun/energy 100 eV
+/run/beamOn 10
+/gun/energy 200 eV
+/run/beamOn 10
+/gun/energy 300 eV
+/run/beamOn 10
+/gun/energy 400 eV
+/run/beamOn 10
+/gun/energy 500 eV
+/run/beamOn 10
+/gun/energy 1 keV
+/run/beamOn 10
+/gun/energy 2 keV
+/run/beamOn 10
+/gun/energy 3 keV
+/run/beamOn 10
+/gun/energy 4 keV
+/run/beamOn 10
+/gun/energy 5 keV
+/run/beamOn 10
+/gun/energy 10 keV
+/run/beamOn 10
+/gun/energy 20 keV
+/run/beamOn 10
+/gun/energy 30 keV
+/run/beamOn 10
+/gun/energy 40 keV
+/run/beamOn 10
+/gun/energy 50 keV
+/run/beamOn 10
+/gun/energy 100 keV
+/run/beamOn 10
+/gun/energy 200 keV
+/run/beamOn 10
+/gun/energy 300 keV
+/run/beamOn 10
+/gun/energy 400 keV
+/run/beamOn 10
+/gun/energy 500 keV
+/run/beamOn 10
+/gun/energy 1 MeV
+/run/beamOn 10
+/gun/energy 2 MeV
+/run/beamOn 10
+/gun/energy 3 MeV
+/run/beamOn 10
+/gun/energy 4 MeV
+/run/beamOn 10
+/gun/energy 5 MeV
+/run/beamOn 10
+/gun/energy 10 MeV
+/run/beamOn 10
+/gun/energy 20 MeV
+/run/beamOn 10
+/gun/energy 30 MeV
+/run/beamOn 10
+/gun/energy 40 MeV
+/run/beamOn 10
+/gun/energy 50 MeV
+/run/beamOn 10
+/gun/energy 100 MeV
+/run/beamOn 10
+/gun/energy 200 MeV
+/run/beamOn 10
+/gun/energy 300 MeV
+/run/beamOn 10
+/gun/energy 400 MeV
+/run/beamOn 10
+/gun/energy 500 MeV
+/run/beamOn 10
+/tracking/verbose 0
+/vis/viewer/set/style surface
+/control/execute run10.mac
+/gun/particle proton
+/gun/energy 1 eV
+/run/beamOn 10
+/gun/energy 2 eV
+/run/beamOn 10
+/gun/energy 3 eV
+/run/beamOn 10
+/gun/energy 4 eV
+/run/beamOn 10
+/gun/energy 5 eV
+/run/beamOn 10
+/gun/energy 10 eV
+/run/beamOn 10
+/gun/energy 20 eV
+/run/beamOn 10
+/gun/energy 30 eV
+/run/beamOn 10
+/gun/energy 40 eV
+/run/beamOn 10
+/gun/energy 50 eV
+/run/beamOn 10
+/gun/energy 100 eV
+/run/beamOn 10
+/gun/energy 200 eV
+/run/beamOn 10
+/gun/energy 300 eV
+/run/beamOn 10
+/gun/energy 400 eV
+/run/beamOn 10
+/gun/energy 500 eV
+/run/beamOn 10
+/gun/energy 1 keV
+/run/beamOn 10
+/gun/energy 2 keV
+/run/beamOn 10
+/gun/energy 3 keV
+/run/beamOn 10
+/gun/energy 4 keV
+/run/beamOn 10
+/gun/energy 5 keV
+/run/beamOn 10
+/gun/energy 10 keV
+/run/beamOn 10
+/gun/energy 20 keV
+/run/beamOn 10
+/gun/energy 30 keV
+/run/beamOn 10
+/gun/energy 40 keV
+/run/beamOn 10
+/gun/energy 50 keV
+/run/beamOn 10
+/gun/energy 100 keV
+/run/beamOn 10
+/gun/energy 200 keV
+/run/beamOn 10
+/gun/energy 300 keV
+/run/beamOn 10
+/gun/energy 400 keV
+/run/beamOn 10
+/gun/energy 500 keV
+/run/beamOn 10
+/gun/energy 1 MeV
+/run/beamOn 10
+/gun/energy 2 MeV
+/run/beamOn 10
+/gun/energy 3 MeV
+/run/beamOn 10
+/gun/energy 4 MeV
+/run/beamOn 10
+/gun/energy 5 MeV
+/run/beamOn 10
+/gun/energy 10 MeV
+/run/beamOn 10
+/gun/energy 20 MeV
+/run/beamOn 10
+/gun/energy 30 MeV
+/run/beamOn 10
+/gun/energy 40 MeV
+/run/beamOn 10
+/gun/energy 50 MeV
+/run/beamOn 10
+/gun/energy 100 MeV
+/run/beamOn 10
+/gun/energy 200 MeV
+/run/beamOn 10
+/gun/energy 300 MeV
+/run/beamOn 10
+/gun/energy 400 MeV
+/run/beamOn 10
+/gun/energy 500 MeV
+/run/beamOn 10
+/gun/particle neutron
+/gun/energy 1 eV
+/run/beamOn 10
+/gun/energy 2 eV
+/run/beamOn 10
+/gun/energy 3 eV
+/run/beamOn 10
+/gun/energy 4 eV
+/run/beamOn 10
+/gun/energy 5 eV
+/run/beamOn 10
+/gun/energy 10 eV
+/run/beamOn 10
+/gun/energy 20 eV
+/run/beamOn 10
+/gun/energy 30 eV
+/run/beamOn 10
+/gun/energy 40 eV
+/run/beamOn 10
+/gun/energy 50 eV
+/run/beamOn 10
+/gun/energy 100 eV
+/run/beamOn 10
+/gun/energy 200 eV
+/run/beamOn 10
+/gun/energy 300 eV
+/run/beamOn 10
+/gun/energy 400 eV
+/run/beamOn 10
+/gun/energy 500 eV
+/run/beamOn 10
+/gun/energy 1 keV
+/run/beamOn 10
+/gun/energy 2 keV
+/run/beamOn 10
+/gun/energy 3 keV
+/run/beamOn 10
+/gun/energy 4 keV
+/run/beamOn 10
+/gun/energy 5 keV
+/run/beamOn 10
+/gun/energy 10 keV
+/run/beamOn 10
+/gun/energy 20 keV
+/run/beamOn 10
+/gun/energy 30 keV
+/run/beamOn 10
+/gun/energy 40 keV
+/run/beamOn 10
+/gun/energy 50 keV
+/run/beamOn 10
+/gun/energy 100 keV
+/run/beamOn 10
+/gun/energy 200 keV
+/run/beamOn 10
+/gun/energy 300 keV
+/run/beamOn 10
+/gun/energy 400 keV
+/run/beamOn 10
+/gun/energy 500 keV
+/run/beamOn 10
+/gun/energy 1 MeV
+/run/beamOn 10
+/gun/energy 2 MeV
+/run/beamOn 10
+/gun/energy 3 MeV
+/run/beamOn 10
+/gun/energy 4 MeV
+/run/beamOn 10
+/gun/energy 5 MeV
+/run/beamOn 10
+/gun/energy 10 MeV
+/run/beamOn 10
+/gun/energy 20 MeV
+/run/beamOn 10
+/gun/energy 30 MeV
+/run/beamOn 10
+/gun/energy 40 MeV
+/run/beamOn 10
+/gun/energy 50 MeV
+/run/beamOn 10
+/gun/energy 100 MeV
+/run/beamOn 10
+/gun/energy 200 MeV
+/run/beamOn 10
+/gun/energy 300 MeV
+/run/beamOn 10
+/gun/energy 400 MeV
+/run/beamOn 10
+/gun/energy 500 MeV
+/run/beamOn 10
+/tracking/verbose 0
