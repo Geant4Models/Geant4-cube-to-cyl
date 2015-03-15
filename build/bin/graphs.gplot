@@ -1,6 +1,6 @@
 set term png
 unset xtics
-
+set ylabel "z"
 
 
 ## Aluminum side = 5 cm ##

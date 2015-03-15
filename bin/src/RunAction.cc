@@ -191,9 +191,6 @@ void RunAction::EndOfRunAction(const G4Run* run) {
       }
       productionInFileStream.close();
     }
-    // Remove Event files per run
-    runRmStream << "rm " << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_events << "/*";
-    runRm = runRmStream.str(); system(runRm);
     
     // Energies for label [future work: generalize arbitrary energy list]
     G4int E_Int = (E_Num % 5); if ( E_Int == 0 ) { E_Int = 5; }
@@ -270,7 +267,7 @@ void RunAction::EndOfRunAction(const G4Run* run) {
     system(runGnu);
 
     // Remove event files
-    //runRmStream << "rm " << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_events << "/*";
-    //runRm = runRmStream.str(); system(runRm);
+    runRmStream << "rm " << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_events << "/*";
+    runRm = runRmStream.str(); system(runRm);
   }
 }

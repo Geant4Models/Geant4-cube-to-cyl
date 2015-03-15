@@ -196,7 +196,7 @@ int main(int argc,char** argv) {
     G4String runGnuplot = "gnuplot graphs.gplot";
     system(runGnuplot);
 
-    // Remove state flag and Analysis/Events dirs
+    // Remove state flag
     G4String runRm = "rm " + data_dir + ".state";
     system(runRm);
   }

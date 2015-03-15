@@ -166,7 +166,7 @@ void EventAction::EndOfEventAction(const G4Event* event) {
     productionInFileStream.close();
   }
 
-  // Get normalized event production tallies continuously append to productionFileName
+  // Get normalized event production tallies continuously append matrixProtonsNeutrons
   eventFileNameStream.str(""); eventFileName = "";
   eventFileNameStream << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num << "/" << data_dir_analysis << "3/event" << eventNum << ".txt";
   eventFileName = eventFileNameStream.str();
@@ -186,9 +186,9 @@ void EventAction::EndOfEventAction(const G4Event* event) {
     }
     eventFileStream.close();
 
-    /*// Remove event file
+    // Remove event file
     runRm = "rm " + eventFileName;
-    system(runRm);*/
+    system(runRm);
   } else { 
     // Add zeroed count to matrix
     matrixProtonsNeutrons[0][0] += 1;
