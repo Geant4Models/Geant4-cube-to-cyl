@@ -30,6 +30,7 @@ SteppingAction::~SteppingAction() {}
 
 // Step Procedure (for every step...)
 void SteppingAction::UserSteppingAction(const G4Step* step) {
+
   // Tracking info
   //
   // Source propagates along z-axis
@@ -44,7 +45,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
   std::ostringstream fileNameStream;
   std::ofstream fileStream;
   G4String fileName;
-  
+
   // Directory info
   G4String fileVarGet;
   G4String data_dir = "data/";

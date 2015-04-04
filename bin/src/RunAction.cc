@@ -16,11 +16,13 @@
 #include <algorithm>
 
 RunAction::RunAction() : G4UserRunAction() {}
-RunAction::~RunAction() { delete G4AnalysisManager::Instance(); }
+RunAction::~RunAction() {}
 
 void RunAction::BeginOfRunAction(const G4Run* run) {
+
   // Primary thread
   if ( G4Threading::G4GetThreadId() == 0 ) {
+
     // Directory info
     G4String fileVarGet;
     G4String data_dir = "data/";
@@ -50,6 +52,24 @@ void RunAction::BeginOfRunAction(const G4Run* run) {
 
     G4cout << "Running " << data_dir_particle << " energy #" << E_Num << " for Al=" << Al_side << G4endl;
   }
+
+  // ROOT Analysis Data
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+
+  // Hit info
+  analysisManager->CreateNtuple("hitsData", "Sensitive Detector Hits");
+  analysisManager->CreateNtupleIColumn("run");
+  analysisManager->CreateNtupleIColumn("event");
+  analysisManager->CreateNtupleIColumn("hit_Id");
+  analysisManager->CreateNtupleDColumn("hit_x");
+  analysisManager->CreateNtupleDColumn("hit_y");
+  analysisManager->CreateNtupleDColumn("hit_px");
+  analysisManager->CreateNtupleDColumn("hit_py");
+  analysisManager->CreateNtupleDColumn("hit_pz");
+  analysisManager->FinishNtuple();
+
+  // Create ROOT input file
+  analysisManager->OpenFile("hitsData");
 }
 
 void RunAction::EndOfRunAction(const G4Run* run) {
@@ -62,6 +82,12 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   // 3a. gamma created per primary
   // 3b. p+ created per primary
   // 3c. n created per primary
+
+  // End data collection
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+  analysisManager->Write();
+  analysisManager->CloseFile();
+  delete G4AnalysisManager::Instance();
   
   // I/O vars
   std::ostringstream geoFileNameStream;
@@ -138,7 +164,7 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   for (G4int numThreads_i=0; numThreads_i < nThreads; numThreads_i++) { numThreadsStream << "#"; }
   G4String totalThreadsString = numThreadsStream.str();
 
-  // If fourth run (not ID==4, but the fourth being completed [future work: thread merge class via G4MTRunManager])
+  // If final worker (not workerID==#*nThreads, but the final being completed [future work: thread merge class via G4MTRunManager])
   if ( threadString == totalThreadsString ) {
 
     // Declare analysis vars  

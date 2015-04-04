@@ -1,3 +1,0 @@
-proton
-gamma
-neutron
