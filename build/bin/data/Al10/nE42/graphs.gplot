@@ -1,0 +1,14 @@
+set term png
+set output "fig_EDep.png"
+set key samplen 2 spacing 0.9 font ",8" below
+set title "Net Energy Deposition per 200 MeV Neutrons
+set xlabel "Position (mm)"
+set ylabel "Energy (eV/n)"
+plot "bins.dat" u 2:3 t "Energy_Dep"
+set output "fig_ChargeDep.png"
+set key samplen 2 spacing 0.9 font ",8" below
+set title "Net Charge per 200 MeV Neutrons
+set xlabel "Position (mm)"
+set ylabel "Charge (e/n)"
+set yrange [-1:1]
+plot "bins.dat" u 2:4 t "Net_Charge"

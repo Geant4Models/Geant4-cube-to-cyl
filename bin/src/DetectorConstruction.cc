@@ -55,6 +55,7 @@ void DetectorConstruction::DefineMaterials() {
 
 //// Geometry parameters
 G4VPhysicalVolume* DetectorConstruction::DefineVolumes() {
+
   // World box parameters
   G4double world_cube_X = 50*cm;
   G4double world_cube_Y = 50*cm;
@@ -66,8 +67,18 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes() {
   G4double Al_cube_Z = 5*cm;
   // 50 cm from source (-7.5 cm from world center)
   G4ThreeVector Al_pos = G4ThreeVector(0*cm, 0*cm,-7.5*cm);
-  G4RotationMatrix Al_cyl_rot = G4RotationMatrix(G4ThreeVector(), G4ThreeVector(), G4ThreeVector());
-  G4Transform3D Al_transform = G4Transform3D(Al_cyl_rot, Al_pos);
+  G4RotationMatrix Al_box_rot = G4RotationMatrix(G4ThreeVector(), G4ThreeVector(), G4ThreeVector());
+  G4Transform3D Al_transform = G4Transform3D(Al_box_rot, Al_pos);
+
+  // Planar Detector geometry (thin cube)
+  G4double detector_cube_X = 15*cm;
+  G4double detector_cube_Y = 15*cm;
+  G4double detector_cube_Z = 0.5*mm;
+  // del_z from Al box (k cm from box center, [k - 7.5*cm] from world center)
+  G4double detector_k_pos = 20*cm;
+  G4ThreeVector detector_pos = G4ThreeVector(0*cm, 0*cm, detector_k_pos);
+  G4RotationMatrix detector_rot = G4RotationMatrix(G4ThreeVector(), G4ThreeVector(), G4ThreeVector());
+  G4Transform3D detector_transform = G4Transform3D(detector_rot, detector_pos);
   
   // He cylinder parameters
   G4double He_cyl_innerRadius = 0*cm;
@@ -123,7 +134,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes() {
 
   // Aluminum Box Volume
   G4VSolid* Al_boxS 
-    = new G4Box("World",            // its name
+    = new G4Box("AlBox",            // its name
                  Al_cube_X/2,       // its half sideX
                  Al_cube_Y/2,       // its half sideY
                  Al_cube_Z/2);      // its half sideZ
@@ -139,6 +150,29 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes() {
                  Al_transform,             // its transformation
                  Al_boxLV,                 // its logical volume                         
                  "Al_box",                 // its name
+                 worldLV,                  // its mother  volume
+                 false,                    // no boolean operation
+                 0,                        // copy number
+                 fCheckOverlaps);          // checking overlaps
+
+  // Planar Detector Volume
+  G4VSolid* Detector_boxS 
+    = new G4Box("DetectorBox",             // its name
+                 detector_cube_X/2,        // its half sideX
+                 detector_cube_Y/2,        // its half sideY
+                 detector_cube_Z/2);       // its half sideZ
+                         
+  G4LogicalVolume* Detector_boxLV
+    = new G4LogicalVolume(
+                 Detector_boxS,            // its solid
+                 defaultMaterial,          // its material
+                 "Detector_box");          // its name
+                                   
+  fDetector
+    = new G4PVPlacement(
+                 detector_transform,       // its transformation
+                 Detector_boxLV,           // its logical volume                         
+                 "Detector_box",           // its name
                  worldLV,                  // its mother  volume
                  false,                    // no boolean operation
                  0,                        // copy number
@@ -174,6 +208,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes() {
   G4VisAttributes* simpleBoxVisAtt= new G4VisAttributes(G4Colour(1.0, 1.0, 1.0));
   simpleBoxVisAtt->SetVisibility(true);
   Al_boxLV->SetVisAttributes(simpleBoxVisAtt);
+  Detector_boxLV->SetVisAttributes(simpleBoxVisAtt);
   He_cylLV->SetVisAttributes(simpleBoxVisAtt);
 
   // Always return the physical World
@@ -181,6 +216,7 @@ G4VPhysicalVolume* DetectorConstruction::DefineVolumes() {
 }
 
 void DetectorConstruction::AlSideIteration(G4int side_i) {
+
   // Variable dimensions
   G4double Al_side[3] = {5*cm, 10*cm, 25*cm};
   

@@ -172,15 +172,10 @@ int main(int argc,char** argv) {
           }
         }
       }
-
-      // Combine hitData worker output 
-      // syscmd = "hadd rootData.root " + data_dir + "rootData_*"; system(syscmd);
-      // Move ROOT analysis to geo file
-      dirCommandStream.str(""); dirCommand = "";
-      dirCommandStream << "mv *.root " << data_dir << data_dir_geo << Al_side[al_num];
     }
     
     for ( G4int side_i=0; side_i<3; side_i++ ) {
+
       // Assign thickness
       detConstruction->AlSideIteration(side_i);
       runManager->GeometryHasBeenModified();

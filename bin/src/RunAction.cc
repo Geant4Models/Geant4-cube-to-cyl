@@ -73,6 +73,7 @@ void RunAction::BeginOfRunAction(const G4Run* run) {
 }
 
 void RunAction::EndOfRunAction(const G4Run* run) {
+
   // Energy scoring
   //
   // Acquire statistics normalized per event for each energy
@@ -88,7 +89,7 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   analysisManager->Write();
   analysisManager->CloseFile();
   delete G4AnalysisManager::Instance();
-  
+
   // I/O vars
   std::ostringstream geoFileNameStream;
   std::ifstream geoFileStream;
@@ -135,15 +136,15 @@ void RunAction::EndOfRunAction(const G4Run* run) {
   threadFileStream >> fileVarGet;
   nThreads = atoi(fileVarGet);
   threadFileStream.close();
-    
+
   // Primary energy (run) number and total events
-  G4int E_Num = run->GetRunID();
+  G4int runID = run->GetRunID();
   G4int numEvents = run->GetNumberOfEventToBeProcessed();
   // Adjust Energy number by state var, beam particle by energy number
   G4int Al_num = 0;   if ( Al_side == 10 ) Al_num = 1; if ( Al_side == 25 ) Al_num = 2;
-  E_Num = E_Num - Al_num*90 + 1;
+  G4int E_Num = runID - Al_num*90 + 1;
   if ( E_Num > 45 ) { E_Num = E_Num - 45; data_dir_particle = "n"; }
-  
+
   // Final thread: any thread can finish first, so check run state file for nThreads of '#'
   // Add '#' per thread
   G4String threadString, numThreadsString = "";
@@ -166,6 +167,11 @@ void RunAction::EndOfRunAction(const G4Run* run) {
 
   // If final worker (not workerID==#*nThreads, but the final being completed [future work: thread merge class via G4MTRunManager])
   if ( threadString == totalThreadsString ) {
+
+    // Move ROOT analysis to geo/energy file
+    std::ostringstream syscmdStream; G4String syscmd;
+    syscmdStream << "mv *.root " << data_dir << data_dir_geo << Al_side << "/" << data_dir_particle << data_dir_energy << E_Num;
+    syscmd = syscmdStream.str(); system(syscmd);
 
     // Declare analysis vars  
     G4int zBin, numBins = 1150;

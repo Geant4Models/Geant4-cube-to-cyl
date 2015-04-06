@@ -1,6 +1,7 @@
 #include "SteppingAction.hh"
 #include "EventAction.hh"
 #include "DetectorConstruction.hh"
+#include "Analysis.hh"
 
 #include "G4SystemOfUnits.hh"
 #include "G4Step.hh"
@@ -65,10 +66,10 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     
   // Primary event number and energy (run) number
   G4int eventNum = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-  G4int E_Num = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
+  G4int runID = G4RunManager::GetRunManager()->GetCurrentRun()->GetRunID();
   // Adjust Energy number by state var, beam particle by energy number
   G4int Al_num = 0;   if ( Al_side == 10 ) Al_num = 1; if ( Al_side == 25 ) Al_num = 2;
-  E_Num = E_Num - Al_num*90 + 1;
+  G4int E_Num = runID - Al_num*90 + 1;
   if ( E_Num > 45 ) { E_Num = E_Num - 45; data_dir_particle = "n"; }
   
   // Get half-length of world to fix z counting [(-L/2, L/2) -> (0, L)]
@@ -134,5 +135,40 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
       fileStream << particleName << "\n";
       fileStream.close();
     }
+  }
+
+  // Planar Detector Hit data
+  G4String volumeName = step->GetTrack()->GetVolume()->GetName();
+  G4String volumeNameVertex = step->GetTrack()->GetLogicalVolumeAtVertex()->GetName();
+
+  if ( volumeName == "Detector_Box" && volumeNameVertex != "Detector_Box" ) {
+
+    // Hit properties
+    G4ThreeVector stepXYZ = step->GetPostStepPoint()->GetPosition();
+    G4double stepX = stepXYZ[0]; G4double stepY = stepXYZ[1];
+    G4ThreeVector stepPxPyPz = step->GetTrack()->GetMomentum();
+    G4double stepPx = stepPxPyPz[0]; G4double stepPy = stepPxPyPz[1]; G4double stepPz = stepPxPyPz[2];
+    G4String particleName = step->GetTrack()->GetDefinition()->GetParticleName();
+    G4int particleID = 5;
+
+    // Digitize particle name
+    if ( particleName == "e-" ) { particleID = 0; }
+    if ( particleName == "proton" ) { particleID = 1; }
+    if ( particleName == "neutron" ) { particleID = 2; }
+    if ( particleName == "gamma" ) { particleID = 4; }
+
+    // Fill ROOT ntuple
+    G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+    analysisManager->SetVerboseLevel(10);
+    analysisManager->FillNtupleIColumn(0, runID);       // run
+    analysisManager->FillNtupleIColumn(1, eventNum);    // event
+    analysisManager->FillNtupleIColumn(2, particleID);  // particle name id
+    analysisManager->FillNtupleDColumn(3, stepX);       // hit_x
+    analysisManager->FillNtupleDColumn(4, stepY);       // hit_y
+    analysisManager->FillNtupleDColumn(5, stepPx);      // hit_px
+    analysisManager->FillNtupleDColumn(6, stepPy);      // hit_py
+    analysisManager->FillNtupleDColumn(7, stepPz);      // hit_pz
+    analysisManager->AddNtupleRow();
+    
   }
 }

@@ -1,0 +1,7 @@
+proton
+proton
+gamma
+gamma
+proton
+neutron
+neutron
